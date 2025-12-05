@@ -1,0 +1,164 @@
+---
+title: "Connect to Multiple Chains"
+sidebarTitle: "Connect Chains"
+description: "Trade across Sonic, Monad, Ink, HyperEVM, and Plasma from a single interface."
+icon: "link"
+---
+
+# Connect to Multiple Chains
+
+AceBot supports trading on multiple blockchains. You can switch between chains instantly and trade on whichever network has the best opportunities.
+
+## Supported Chains
+
+| Chain | Symbol | Description |
+|-------|--------|-------------|
+| 🔵 Sonic | S | Fast gaming-focused blockchain |
+| 🟣 Monad | MON | High-performance trading chain |
+| 🖤 Ink | ETH | Ethereum Layer 2 |
+| ⚡ HyperEVM | HYPE | Hyperliquid's EVM |
+| 🔴 Plasma | XPL | Layer 3 rollup |
+
+## Switch Your Active Chain
+
+<Tabs>
+  <Tab title="Using Main Menu">
+    <Steps>
+      <Step title="Open Settings">
+        Tap **⚙️ Settings** from the main menu.
+      </Step>
+
+      <Step title="Select Manage Chains">
+        Tap on **Manage Chains** or the chain selector.
+      </Step>
+
+      <Step title="Choose Your Chain">
+        Tap on any chain to switch to it. A checkmark shows your current active chain.
+
+        [SCREENSHOT: Chain selection menu showing all chains]
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Using Command">
+    Use the `/chain` command to quickly switch networks:
+
+    ```
+    /chain
+    ```
+
+    This opens the chain selector. Tap on your desired chain.
+  </Tab>
+
+  <Tab title="Quick Switch">
+    In the wallet manager, you'll see chain badges at the top:
+
+    ```
+    🔵 | 🟣 | 🖤 | ⚡ | 🔴
+    ```
+
+    Tap any badge to instantly switch to that chain.
+  </Tab>
+</Tabs>
+
+## Enable or Disable Chains
+
+You can hide chains you don't use to simplify your interface.
+
+<Steps>
+  <Step title="Open Settings">
+    Tap **⚙️ Settings** from the main menu.
+  </Step>
+
+  <Step title="Go to Manage Chains">
+    Select **Manage Chains**.
+  </Step>
+
+  <Step title="Toggle Chains">
+    - Tap a chain to **enable** it (checkmark appears)
+    - Tap again to **disable** it (checkmark removed)
+
+    Disabled chains won't appear in your chain selector or trading menus.
+
+    <Warning>
+    You must have at least one chain enabled at all times.
+    </Warning>
+  </Step>
+</Steps>
+
+[SCREENSHOT: Chain management showing enabled/disabled chains]
+
+## Set Your Default Chain
+
+Your default chain is automatically selected when you open AceBot.
+
+<Steps>
+  <Step title="Open Settings">
+    Tap **⚙️ Settings** from the main menu.
+  </Step>
+
+  <Step title="Select Default Network">
+    Tap **Default Network** and choose your preferred chain.
+  </Step>
+</Steps>
+
+## One Wallet, Multiple Chains
+
+Your AceBot wallet works on all supported chains. The same wallet address can hold:
+- S tokens on Sonic
+- MON tokens on Monad
+- ETH on Ink
+- HYPE on HyperEVM
+- XPL on Plasma
+
+When you switch chains, your wallet automatically shows the balance for that chain.
+
+<Info>
+Each chain has its own native token for gas fees. Make sure you have native tokens on each chain you want to trade on.
+</Info>
+
+## Chain-Specific Features
+
+While the core trading experience is the same across chains, some features may vary:
+
+| Feature | Sonic | Monad | Ink | HyperEVM | Plasma |
+|---------|-------|-------|-----|----------|--------|
+| Direct Trading | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Limit Orders | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DCA | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Bridge | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Wrap/Unwrap | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+## Bridge Between Chains
+
+Need to move funds between chains? Use the built-in bridge:
+
+1. Tap **🌉 Bridge** from the main menu
+2. Select source chain and destination chain
+3. Choose amount (25%, 50%, MAX, or custom)
+4. Confirm the bridge transaction
+
+The bridge uses Li.Fi to find the best route for your transfer.
+
+<Tip>
+Bridging takes a few minutes depending on the chains involved. You'll receive status updates as the transfer progresses.
+</Tip>
+
+## Per-Chain Settings
+
+Some settings can be configured per chain:
+
+- **Default Buy Amount** — Set different buy amounts for each chain
+- **Rakeback Tiers** — Your trading volume tier is tracked separately per chain
+- **Referral Rewards** — Claim rewards independently for each chain
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Buy tokens on your chosen chain
+  </Card>
+  <Card title="Use the Bridge" icon="bridge" href="/features/bridge">
+    Move assets between chains
+  </Card>
+</CardGroup>

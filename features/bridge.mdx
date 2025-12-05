@@ -1,0 +1,206 @@
+---
+title: "Cross-Chain Bridge"
+sidebarTitle: "Bridge"
+description: "Move your tokens between supported chains using AceBot's built-in bridge."
+icon: "bridge"
+---
+
+# Cross-Chain Bridge
+
+AceBot includes a built-in bridge powered by Li.Fi, allowing you to move native tokens between all supported chains directly from Telegram.
+
+## Supported Bridge Routes
+
+You can bridge between any combination of:
+- 🔵 **Sonic** (S)
+- 🟣 **Monad** (MON)
+- 🖤 **Ink** (ETH)
+- ⚡ **HyperEVM** (HYPE)
+- 🔴 **Plasma** (XPL)
+
+<Info>
+The bridge supports native tokens only. To bridge other tokens, first swap to the native token.
+</Info>
+
+## How to Bridge
+
+<Steps>
+  <Step title="Open Bridge">
+    Tap **🌉 Bridge** from the main menu.
+
+    [SCREENSHOT: Main menu with Bridge button]
+  </Step>
+
+  <Step title="Select Source Chain">
+    Choose the chain where your tokens currently are.
+
+    The bridge automatically suggests the chain with your highest balance.
+
+    [SCREENSHOT: Source chain selection]
+  </Step>
+
+  <Step title="Select Destination Chain">
+    Choose where you want to send your tokens.
+
+    Tap **🔄** to quickly swap source and destination.
+
+    [SCREENSHOT: Destination chain selection]
+  </Step>
+
+  <Step title="Enter Amount">
+    Select how much to bridge:
+
+    **Presets:**
+    - 25% of balance
+    - 50% of balance
+    - MAX (100% minus gas buffer)
+
+    Or enter a custom amount.
+
+    [SCREENSHOT: Amount selection with presets]
+  </Step>
+
+  <Step title="Review Quote">
+    The bridge shows:
+    - Amount you're sending
+    - Estimated amount you'll receive
+    - Bridge fee (in USD)
+    - Gas cost (in USD)
+    - Estimated time
+
+    [SCREENSHOT: Bridge quote preview]
+  </Step>
+
+  <Step title="Adjust Slippage (Optional)">
+    Default slippage is 0.3%. Tap to adjust if needed for volatile conditions.
+  </Step>
+
+  <Step title="Confirm Bridge">
+    Review all details and tap **Confirm**.
+
+    The bridge transaction is submitted.
+
+    [SCREENSHOT: Bridge confirmation screen]
+  </Step>
+
+  <Step title="Track Progress">
+    AceBot shows real-time status:
+    - Transaction submitted
+    - Processing on source chain
+    - Bridging in progress
+    - Received on destination chain
+
+    You'll receive explorer links for both source and destination transactions.
+
+    [SCREENSHOT: Bridge progress tracking]
+  </Step>
+</Steps>
+
+## Bridge Fees and Costs
+
+When you bridge, you pay:
+
+| Cost | Description |
+|------|-------------|
+| **Bridge Fee** | Fee charged by the bridge protocol |
+| **Gas (Source)** | Gas to send tokens from source chain |
+| **Gas (Destination)** | Gas to receive tokens on destination chain |
+
+All costs are shown in USD before you confirm.
+
+<Tip>
+The MAX preset automatically reserves a small gas buffer (0.1%) to ensure you can pay for gas on the destination chain.
+</Tip>
+
+## Bridge Times
+
+Typical bridge times by route:
+
+| Route | Estimated Time |
+|-------|----------------|
+| Sonic ↔ Monad | 1-3 minutes |
+| Sonic ↔ Ink | 2-5 minutes |
+| Monad ↔ HyperEVM | 1-3 minutes |
+| Any ↔ Plasma | 2-5 minutes |
+
+Times can vary based on network congestion.
+
+## Li.Fi Bridge Integration
+
+AceBot uses Li.Fi as the bridge aggregator. Li.Fi:
+- Finds the best route across multiple bridges
+- Optimizes for speed and cost
+- Supports all major bridging protocols
+
+## Troubleshooting Bridge Issues
+
+<AccordionGroup>
+  <Accordion title="Bridge is taking too long" icon="clock">
+    Bridge times can extend during network congestion. Check:
+    - Source transaction on source chain explorer
+    - Wait 10-15 minutes before investigating
+    - Contact support if stuck over 30 minutes
+  </Accordion>
+
+  <Accordion title="Received less than expected" icon="money-bill-wave">
+    Within slippage tolerance is normal. If significantly less:
+    - Check the quote slippage you set
+    - Bridge routes may change based on liquidity
+    - Contact support for major discrepancies
+  </Accordion>
+
+  <Accordion title="Transaction failed" icon="xmark">
+    Common causes:
+    - Insufficient balance for gas
+    - Slippage exceeded
+    - Network congestion
+
+    Your funds remain on the source chain. Try again with adjusted settings.
+  </Accordion>
+
+  <Accordion title="Tokens not showing on destination" icon="eye-slash">
+    - Wait for full confirmation (check explorer)
+    - Use `/balance` to force refresh
+    - Make sure you're viewing the correct chain
+    - Check the transaction on destination explorer
+  </Accordion>
+</AccordionGroup>
+
+## Bridge Limits
+
+| Limit | Value |
+|-------|-------|
+| Minimum bridge | Varies by route (~$1-5 worth) |
+| Maximum bridge | Limited by available liquidity |
+| Gas buffer | 0.1% (10 BPS) reserved automatically |
+
+## Best Practices
+
+1. **Check quotes before bridging** — Fees vary by route and time
+2. **Start with small amounts** — Test new routes with minimal funds
+3. **Keep gas on both chains** — Ensure you can transact on destination
+4. **Use MAX wisely** — MAX reserves gas buffer but bridges most of your balance
+
+## Alternative Bridge Options
+
+If the built-in bridge doesn't support your needs:
+
+| Chain | Alternative Bridge |
+|-------|-------------------|
+| Sonic | Hyperlane Warp Route |
+| Ink | Ink Bridge Hub |
+| HyperEVM | LayerZero |
+| Plasma | Stargate, Jumper |
+
+Access these through the chain's official bridge interface.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Wrap/Unwrap" icon="repeat" href="/features/wrap-unwrap">
+    Convert native to wrapped tokens
+  </Card>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Trade on your destination chain
+  </Card>
+</CardGroup>

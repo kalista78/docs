@@ -1,0 +1,176 @@
+---
+title: "Security Best Practices"
+sidebarTitle: "Security Tips"
+description: "Keep your AceBot wallet and funds safe with these essential security practices."
+icon: "shield"
+---
+
+# Security Best Practices
+
+Your funds are only as safe as your security habits. Follow these guidelines to protect your AceBot wallet.
+
+## How AceBot Protects You
+
+### Encrypted Private Keys
+Your private keys are encrypted with **AES-256-GCM** — the same encryption used by banks and governments. Keys are encrypted before storage and can only be accessed with your account.
+
+### Keys Never Shown in Chat
+Private keys are **never displayed in Telegram messages**. This prevents accidental exposure through screenshots or message history.
+
+### Auto-Delete Sensitive Messages
+When you import a wallet by pasting a private key, your message is **automatically deleted** to prevent it from remaining in chat history.
+
+### Token Security Scanning
+AceBot integrates with **GoPlus** to scan tokens for:
+- Honeypot contracts (tokens you can't sell)
+- Rug pull indicators
+- Malicious contract code
+- Unusual trading restrictions
+
+<Info>
+GoPlus security scanning is enabled by default. You can toggle it in Settings, but we recommend keeping it on.
+</Info>
+
+## Your Security Responsibilities
+
+### Never Share Your Private Keys
+
+<Warning>
+AceBot support will **NEVER** ask for your private keys. Anyone asking for keys is a scammer.
+</Warning>
+
+Your private keys give full control over your funds. Never share them with anyone, including:
+- "Support" staff in DMs
+- "Admins" claiming to help
+- Websites asking for keys
+- Anyone, ever
+
+### Verify Bot Identity
+
+Before interacting with AceBot, confirm you're using the real bot:
+- Official bot: **@AceBotApp**
+- Official community: Check the verified community link
+
+Scammers create fake bots with similar names. Always verify before depositing funds.
+
+### Start with Small Amounts
+
+When trying new features or trading new tokens:
+1. Start with a small test amount
+2. Verify the transaction works correctly
+3. Scale up once you're confident
+
+### Back Up Your Wallet Access
+
+Your AceBot wallet is tied to your Telegram account. Protect your Telegram account:
+- Enable two-factor authentication (2FA) on Telegram
+- Use a strong, unique password
+- Never share your Telegram login code
+
+### Be Cautious with Token Links
+
+Token contract addresses can come from anywhere. Before trading:
+- Verify the contract address from official sources
+- Check if GoPlus flags any security issues
+- Research the token on DEX Screener or similar platforms
+
+## Security Settings in AceBot
+
+### GoPlus Security Toggle
+
+Enable or disable token security scanning:
+
+1. Tap **⚙️ Settings**
+2. Find **🛡️ GoPlus Security**
+3. Toggle on (recommended) or off
+
+When enabled, AceBot will warn you about potentially risky tokens before trading.
+
+### Wallet Access Through Secure Portal
+
+If you need to access your private keys (for migration or backup):
+- AceBot provides a secure external portal
+- Never type keys directly in Telegram
+- Access keys only on a secure, private device
+
+## Common Scams to Avoid
+
+<AccordionGroup>
+  <Accordion title="Fake Support Scams" icon="user-secret">
+    Scammers pose as AceBot support in your DMs. They may:
+    - Ask for private keys "to fix an issue"
+    - Send links to fake websites
+    - Claim your account is suspended
+
+    **Reality**: Real support never DMs first and never asks for keys.
+  </Accordion>
+
+  <Accordion title="Phishing Bots" icon="robot">
+    Fake bots with names like "@AceBot_Official" or "@AceBotSupport":
+    - May look identical to the real bot
+    - Ask you to "verify" your wallet
+    - Steal any keys you enter
+
+    **Reality**: The only official bot is @AceBotApp.
+  </Accordion>
+
+  <Accordion title="Honeypot Tokens" icon="honey-pot">
+    Tokens designed to trap your funds:
+    - You can buy but not sell
+    - High tax on sells (90%+)
+    - Contract can freeze your tokens
+
+    **Reality**: GoPlus scans for these. Always check security warnings.
+  </Accordion>
+
+  <Accordion title="Rug Pulls" icon="parachute-box">
+    Developers abandon projects after:
+    - Draining liquidity pools
+    - Dumping their token holdings
+    - Disabling contract functions
+
+    **Reality**: Research projects before investing. Check liquidity locks and team credibility.
+  </Accordion>
+</AccordionGroup>
+
+## What to Do If Compromised
+
+If you suspect your wallet is compromised:
+
+<Steps>
+  <Step title="Stop Using the Wallet">
+    Do not make any more transactions from the compromised wallet.
+  </Step>
+
+  <Step title="Create a New Wallet">
+    Create a new wallet in AceBot immediately.
+  </Step>
+
+  <Step title="Transfer Remaining Funds">
+    If any funds remain, transfer them to your new wallet as quickly as possible.
+  </Step>
+
+  <Step title="Report the Incident">
+    If you were scammed, report the scammer's Telegram account and warn the community.
+  </Step>
+</Steps>
+
+## Security Checklist
+
+- [ ] 2FA enabled on Telegram
+- [ ] Using official bot @AceBotApp
+- [ ] GoPlus security enabled
+- [ ] Never shared private keys
+- [ ] Started with small test amounts
+- [ ] Verified token contracts before trading
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Trade safely with your secured wallet
+  </Card>
+  <Card title="Get Support" icon="life-ring" href="/troubleshooting/contact-support">
+    Report issues through official channels
+  </Card>
+</CardGroup>

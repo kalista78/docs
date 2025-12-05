@@ -1,0 +1,240 @@
+---
+title: "Sell Tokens"
+sidebarTitle: "Sell Tokens"
+description: "Take profits or exit positions by selling tokens through AceBot."
+icon: "hand-holding-dollar"
+---
+
+# Sell Tokens
+
+Selling on AceBot is just as simple as buying. Choose to sell a percentage of your position or a specific amount.
+
+## Quick Sell with Commands
+
+The fastest way to sell is with the `/sell` command:
+
+```
+/sell 0x1234...5678 50%
+```
+
+This sells 50% of your token position immediately.
+
+### Command Syntax
+
+```
+/sell <token_address> [amount|percentage%]
+```
+
+- **token_address** — The contract address of the token you want to sell
+- **amount** — (Optional) Number of tokens to sell, OR
+- **percentage%** — (Optional) Percentage of your balance to sell (add % symbol)
+
+### Examples
+
+```
+/sell 0xabc...def           # Sell default percentage (usually 100%)
+/sell 0xabc...def 50%       # Sell 50% of your position
+/sell 0xabc...def 25%       # Sell 25% of your position
+/sell 0xabc...def 1000      # Sell exactly 1000 tokens
+```
+
+## Sell Using the Menu
+
+<Steps>
+  <Step title="Open Sell Menu">
+    Tap **🔴 Sell** from the main menu.
+
+    [SCREENSHOT: Main menu with Sell button highlighted]
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the token contract address you want to sell.
+
+    [SCREENSHOT: Token address input for sell]
+  </Step>
+
+  <Step title="Select Wallet">
+    Choose which wallet to sell from. Only wallets holding this token will be shown.
+
+    [SCREENSHOT: Wallet selection showing token balance]
+  </Step>
+
+  <Step title="Choose Amount">
+    Select how much to sell:
+
+    **Preset percentages:**
+    - 25% — Sell a quarter of your position
+    - 50% — Sell half
+    - 75% — Sell most
+    - 100% — Sell everything (MAX)
+
+    Or tap **Custom** to enter a specific token amount.
+
+    [SCREENSHOT: Percentage selection buttons]
+  </Step>
+
+  <Step title="Review and Confirm">
+    Review your sell order:
+    - Tokens you're selling
+    - Estimated native tokens you'll receive
+    - Current price and slippage
+
+    Tap **Confirm** to execute.
+
+    [SCREENSHOT: Sell confirmation screen]
+  </Step>
+</Steps>
+
+## Understanding the Sell Screen
+
+| Field | Description |
+|-------|-------------|
+| **Token** | Name, symbol, and your current balance |
+| **Price** | Current token price |
+| **Amount to Sell** | Number of tokens you're selling |
+| **Estimated Receive** | Native tokens you'll get |
+| **Slippage** | Maximum price drop you'll accept |
+| **Value** | USD value of your sell |
+
+## Sell from Balances
+
+You can sell directly from your balance view:
+
+<Steps>
+  <Step title="Open Balances">
+    Tap **💰 Balances** from the main menu.
+  </Step>
+
+  <Step title="Find Your Token">
+    Scroll to find the token you want to sell.
+  </Step>
+
+  <Step title="Tap Sell">
+    Tap the **🔴 Sell** button next to the token.
+  </Step>
+
+  <Step title="Choose Amount and Confirm">
+    Select your sell percentage and confirm.
+  </Step>
+</Steps>
+
+## Sell from Watchlist
+
+If a token is in your watchlist:
+
+1. Tap **👀 Watchlist**
+2. Find the token
+3. Tap **🔴 Sell TOKEN**
+4. Select amount and confirm
+
+[SCREENSHOT: Watchlist with sell button]
+
+## Setting Default Sell Percentage
+
+To avoid selecting a percentage every time:
+
+1. Tap **⚙️ Settings**
+2. Select **Default Sell %**
+3. Enter your preferred default (e.g., 100% to always sell all)
+
+## Selling with Multiple Wallets
+
+If you hold the same token in multiple wallets:
+
+<Steps>
+  <Step title="Open Sell Menu">
+    Start a sell as normal.
+  </Step>
+
+  <Step title="Select Multiple Wallets">
+    Instead of one wallet, select all wallets you want to sell from.
+  </Step>
+
+  <Step title="Set Percentage">
+    Choose the percentage to sell. This applies to each selected wallet.
+  </Step>
+
+  <Step title="Confirm">
+    Each wallet executes its own sell transaction.
+  </Step>
+</Steps>
+
+## Partial vs Full Sells
+
+<Tabs>
+  <Tab title="Partial Sells">
+    **When to use:**
+    - Taking profits while keeping exposure
+    - Scaling out of a position
+    - Reducing risk without fully exiting
+
+    **Common strategies:**
+    - Sell 25% at 2x
+    - Sell 25% at 5x
+    - Sell 25% at 10x
+    - Keep 25% for long term
+  </Tab>
+
+  <Tab title="Full Sells (100%)">
+    **When to use:**
+    - Exiting a position completely
+    - Token shows security concerns
+    - You've reached your target
+
+    **Note:** Full sells liquidate your entire balance of that token.
+  </Tab>
+</Tabs>
+
+## Price Impact on Large Sells
+
+Selling large amounts can move the market price against you:
+
+- **Low impact** — Your sell is small relative to liquidity
+- **Medium impact** — You might get a worse price
+- **High impact** — Consider splitting into multiple sells
+
+AceBot shows estimated price impact on the confirmation screen.
+
+<Tip>
+For large positions, consider selling in chunks (25% at a time) to minimize price impact.
+</Tip>
+
+## Failed Sell Transactions
+
+If your sell fails:
+
+<AccordionGroup>
+  <Accordion title="Slippage too low">
+    The price moved more than your slippage allows. Increase slippage and try again.
+  </Accordion>
+
+  <Accordion title="Insufficient gas">
+    You don't have enough native tokens for gas. Add more native tokens to your wallet.
+  </Accordion>
+
+  <Accordion title="Token is a honeypot">
+    Some tokens prevent selling. Check GoPlus security warnings before buying.
+  </Accordion>
+
+  <Accordion title="High sell tax">
+    Some tokens have high sell taxes (30%+). Factor this into your expected returns.
+  </Accordion>
+</AccordionGroup>
+
+## Tips for Successful Sells
+
+1. **Check liquidity depth** before selling large amounts
+2. **Use appropriate slippage** — higher for volatile tokens
+3. **Verify you're selling the right token** — check the contract address
+4. **Consider gas costs** — small sells might not be worth the gas
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Limit Orders" icon="crosshairs" href="/trading/limit-orders">
+    Automate your sells at target prices
+  </Card>
+  <Card title="DCA Orders" icon="clock" href="/trading/dca-orders">
+    Scale out over time
+  </Card>
+</CardGroup>

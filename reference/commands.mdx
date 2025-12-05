@@ -1,0 +1,337 @@
+---
+title: "Bot Commands"
+sidebarTitle: "Commands"
+description: "Complete reference of all AceBot commands and their usage."
+icon: "terminal"
+---
+
+# Bot Commands
+
+Complete list of all commands available in AceBot.
+
+## Trading Commands
+
+### /buy
+Buy tokens instantly at market price.
+
+```
+/buy <token_address> [amount]
+```
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| token_address | Yes | Contract address of token to buy |
+| amount | No | Amount of native tokens to spend |
+
+**Examples:**
+```
+/buy 0x1234...5678           # Buy with default amount
+/buy 0x1234...5678 10        # Buy with 10 native tokens
+/buy 0x1234...5678 0.5       # Buy with 0.5 native tokens
+```
+
+---
+
+### /sell
+Sell tokens from your wallet.
+
+```
+/sell <token_address> [amount|percentage%]
+```
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| token_address | Yes | Contract address of token to sell |
+| amount/percentage | No | Amount of tokens or percentage (add %) |
+
+**Examples:**
+```
+/sell 0x1234...5678           # Sell default percentage
+/sell 0x1234...5678 50%       # Sell 50% of position
+/sell 0x1234...5678 1000      # Sell 1000 tokens
+```
+
+---
+
+### /limit
+Create a limit order with price triggers.
+
+```
+/limit <token_address> <amount|percent%> <trigger> [duration]
+```
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| token_address | Yes | Contract address |
+| amount/percent | Yes | Amount in native tokens or percentage |
+| trigger | Yes | Price trigger (see below) |
+| duration | No | How long order stays active |
+
+**Trigger formats:**
+- `@price` — Target price (e.g., `@0.0015`)
+- `%:+/-pct` — Percentage change (e.g., `%:+25` or `%:-30`)
+- `mc:value` — Market cap (e.g., `mc:500k`, `mc:2m`)
+
+**Duration formats:** `1H`, `6H`, `24H`, `1D`, `3D`, `5D`
+
+**Examples:**
+```
+/limit 0x1234...5678 5 @0.001           # Buy at $0.001
+/limit 0x1234...5678 50% %:+100 3D      # Sell 50% when +100%, valid 3 days
+/limit 0x1234...5678 10 mc:500k         # Buy at 500k market cap
+```
+
+---
+
+### /lbuy
+Quick limit buy order setup.
+
+```
+/lbuy <token_address>
+```
+
+Opens the limit order wizard pre-configured for buying.
+
+---
+
+### /lsell
+Quick limit sell order setup.
+
+```
+/lsell <token_address>
+```
+
+Opens the limit order wizard pre-configured for selling.
+
+---
+
+### /dcabuy
+Set up Dollar Cost Averaging for buying.
+
+```
+/dcabuy <token_address>
+```
+
+Opens the DCA wizard pre-configured for recurring buys.
+
+---
+
+### /dcasell
+Set up Dollar Cost Averaging for selling.
+
+```
+/dcasell <token_address>
+```
+
+Opens the DCA wizard pre-configured for recurring sells.
+
+---
+
+### /wrapnow
+Wrap native tokens instantly.
+
+```
+/wrapnow <amount|percentage%>
+```
+
+**Examples:**
+```
+/wrapnow 10        # Wrap 10 native tokens
+/wrapnow 50%       # Wrap 50% of balance
+```
+
+---
+
+### /unwrapnow
+Unwrap tokens instantly.
+
+```
+/unwrapnow <amount|percentage%>
+```
+
+**Examples:**
+```
+/unwrapnow 5       # Unwrap 5 wrapped tokens
+/unwrapnow 100%    # Unwrap all wrapped tokens
+```
+
+---
+
+### /bridge
+Open the cross-chain bridge.
+
+```
+/bridge
+```
+
+Opens the bridge wizard to transfer tokens between chains.
+
+---
+
+## Account Commands
+
+### /start
+Return to the main menu or process special links.
+
+```
+/start
+```
+
+Also handles:
+- Referral links (`?start=ref_ID`)
+- Token hide links (`?start=hide_ADDRESS`)
+
+---
+
+### /chain
+Switch between blockchain networks.
+
+```
+/chain
+```
+
+Opens the chain selector to change your active network.
+
+---
+
+### /wallet
+Open wallet management.
+
+```
+/wallet
+```
+
+Opens the wallet manager to create, import, or manage wallets.
+
+---
+
+### /balance or /mybalances
+View your token balances.
+
+```
+/balance
+```
+
+Shows balances across all tokens on the current chain.
+
+---
+
+### /settings
+Open bot settings.
+
+```
+/settings
+```
+
+Configure slippage, defaults, security, and chain preferences.
+
+---
+
+### /referral
+View referral program and rewards.
+
+```
+/referral
+```
+
+Shows your referral link, earnings, and claim options.
+
+---
+
+### /position
+View active trading positions.
+
+```
+/position
+```
+
+Shows active limit orders, DCA orders, and positions.
+
+---
+
+### /watchlist
+Manage your token watchlist.
+
+```
+/watchlist
+```
+
+View and manage tokens you're watching.
+
+---
+
+### /unhide
+Manage hidden tokens.
+
+```
+/unhide
+```
+
+Restore tokens that were previously hidden.
+
+---
+
+### /refresh
+Refresh balance display.
+
+```
+/refresh
+```
+
+Forces a balance refresh if cached data seems stale.
+
+---
+
+### /help
+Get help with using the bot.
+
+```
+/help
+```
+
+Links to documentation and support resources.
+
+---
+
+### /commands
+Show all available commands.
+
+```
+/commands
+```
+
+Displays a list of available commands.
+
+---
+
+## Quick Reference Table
+
+| Command | Purpose |
+|---------|---------|
+| `/buy` | Buy tokens |
+| `/sell` | Sell tokens |
+| `/limit` | Create limit order |
+| `/lbuy` | Quick limit buy |
+| `/lsell` | Quick limit sell |
+| `/dcabuy` | DCA buy setup |
+| `/dcasell` | DCA sell setup |
+| `/wrapnow` | Wrap tokens |
+| `/unwrapnow` | Unwrap tokens |
+| `/bridge` | Cross-chain bridge |
+| `/start` | Main menu |
+| `/chain` | Switch chain |
+| `/wallet` | Manage wallets |
+| `/balance` | View balances |
+| `/settings` | Bot settings |
+| `/referral` | Referral program |
+| `/position` | Active positions |
+| `/watchlist` | Token watchlist |
+| `/unhide` | Unhide tokens |
+| `/help` | Get help |
+
+## Tips
+
+- Most commands can also be accessed through menu buttons
+- Commands with optional parameters will prompt you if not provided
+- Use `/start` to reset if the bot becomes unresponsive
+- Token addresses can be pasted directly without a command to start trading

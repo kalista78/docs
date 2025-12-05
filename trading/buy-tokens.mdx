@@ -1,0 +1,204 @@
+---
+title: "Buy Tokens"
+sidebarTitle: "Buy Tokens"
+description: "Learn how to buy tokens on AceBot with instant execution or quick commands."
+icon: "cart-shopping"
+---
+
+# Buy Tokens
+
+Buying tokens on AceBot is fast and simple. Paste a token address, choose your amount, and confirm.
+
+## Quick Buy with Commands
+
+The fastest way to buy is with the `/buy` command:
+
+```
+/buy 0x1234...5678 5
+```
+
+This buys 5 native tokens worth of the specified token immediately.
+
+### Command Syntax
+
+```
+/buy <token_address> [amount]
+```
+
+- **token_address** — The contract address of the token you want to buy
+- **amount** — (Optional) Amount of native tokens to spend (defaults to your default buy amount)
+
+### Examples
+
+```
+/buy 0xabc...def           # Buy using default amount
+/buy 0xabc...def 10        # Buy with 10 native tokens
+/buy 0xabc...def 0.5       # Buy with 0.5 native tokens
+```
+
+## Buy Using the Menu
+
+<Steps>
+  <Step title="Open Buy Menu">
+    Tap **🟢 Buy** from the main menu.
+
+    [SCREENSHOT: Main menu with Buy button highlighted]
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the token contract address. You can get this from:
+    - DEX Screener
+    - Token's official channels
+    - Trading communities
+
+    [SCREENSHOT: Token address input prompt]
+  </Step>
+
+  <Step title="Select Wallet">
+    Choose which wallet to use for the purchase. Your default wallet is pre-selected.
+
+    [SCREENSHOT: Wallet selection screen]
+  </Step>
+
+  <Step title="Choose Amount">
+    Select a preset amount or enter a custom value:
+
+    **Preset amounts:**
+    - 1, 2, 5, 10, 25, 50 (in native tokens)
+
+    Or tap **Custom** to enter any amount.
+
+    [SCREENSHOT: Amount selection with presets]
+  </Step>
+
+  <Step title="Review and Confirm">
+    Review your order details:
+    - Token name and symbol
+    - Amount to spend
+    - Estimated tokens received
+    - Current slippage setting
+
+    Tap **Confirm** to execute the trade.
+
+    [SCREENSHOT: Order confirmation screen]
+  </Step>
+</Steps>
+
+## Understanding the Trade Screen
+
+When you're about to buy, you'll see:
+
+| Field | Description |
+|-------|-------------|
+| **Token** | Name, symbol, and contract address |
+| **Price** | Current token price |
+| **Market Cap** | Token's market capitalization |
+| **24h Change** | Price change in last 24 hours |
+| **Amount In** | How much native token you're spending |
+| **Amount Out** | Estimated tokens you'll receive |
+| **Slippage** | Maximum price movement you'll accept |
+
+## Adjusting Slippage
+
+Slippage protects you from price movements between when you place and when your trade executes.
+
+<Tabs>
+  <Tab title="During Trade">
+    On the confirmation screen, tap the slippage setting to adjust:
+    - Low volatility tokens: 1-5%
+    - Medium volatility: 5-15%
+    - High volatility/low liquidity: 15-50%
+  </Tab>
+
+  <Tab title="Set Default">
+    Set your default slippage in **⚙️ Settings** → **Slippage**. This applies to all future trades unless overridden.
+  </Tab>
+</Tabs>
+
+<Tip>
+If your trades keep failing, try increasing slippage. The token might be moving faster than your setting allows.
+</Tip>
+
+## Token Security Check
+
+Before executing trades, AceBot checks the token for security issues:
+
+- **Honeypot detection** — Can you sell the token?
+- **High tax warning** — Are buy/sell taxes excessive?
+- **Contract risks** — Any suspicious code detected?
+
+If issues are found, you'll see a warning. You can still proceed, but do so with caution.
+
+[SCREENSHOT: Security warning example]
+
+## Set Default Buy Amount
+
+Tired of entering amounts every time? Set a default:
+
+1. Tap **⚙️ Settings**
+2. Select **Default Buy Amount**
+3. Choose your chain and enter your preferred amount
+
+Now when you use `/buy` without an amount, it uses your default.
+
+## Buying Multiple Tokens
+
+You can buy with multiple wallets simultaneously:
+
+<Steps>
+  <Step title="Open Buy Menu">
+    Tap **🟢 Buy** from the main menu.
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the token contract address.
+  </Step>
+
+  <Step title="Select Multiple Wallets">
+    Instead of selecting one wallet, tap to select multiple. Each selected wallet will execute its own buy transaction.
+  </Step>
+
+  <Step title="Confirm">
+    The total amount will be split across selected wallets.
+  </Step>
+</Steps>
+
+## Tips for Successful Buys
+
+<AccordionGroup>
+  <Accordion title="Verify the contract address" icon="check">
+    Always double-check the token address from official sources. Scammers create fake tokens with similar names.
+  </Accordion>
+
+  <Accordion title="Start with small amounts" icon="seedling">
+    When buying a new token for the first time, test with a small amount to ensure everything works correctly.
+  </Accordion>
+
+  <Accordion title="Check liquidity" icon="droplet">
+    Low liquidity tokens may have high slippage. Check DEX Screener for liquidity depth before buying large amounts.
+  </Accordion>
+
+  <Accordion title="Watch for security warnings" icon="shield-halved">
+    Pay attention to GoPlus security warnings. They can save you from honeypots and rug pulls.
+  </Accordion>
+</AccordionGroup>
+
+## What Happens After You Buy
+
+1. Your transaction is queued for execution
+2. AceBot estimates gas and sends the transaction
+3. You receive a transaction hash with an explorer link
+4. Your balance updates once confirmed
+
+Trades typically execute in a few seconds, depending on network congestion.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Sell Tokens" icon="hand-holding-dollar" href="/trading/sell-tokens">
+    Learn how to take profits
+  </Card>
+  <Card title="Limit Orders" icon="crosshairs" href="/trading/limit-orders">
+    Set automatic buy triggers
+  </Card>
+</CardGroup>

@@ -1,0 +1,148 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "AceBot",
+  "theme": "mint",
+  "colors": {
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#5B21B6"
+  },
+  "logo": {
+    "light": "/images/logo-light.svg",
+    "dark": "/images/logo-dark.svg",
+    "href": "https://acebot.app"
+  },
+  "favicon": "/images/favicon.png",
+  "metadata": {
+    "og:site_name": "AceBot Docs",
+    "og:title": "AceBot - Multi-Chain Telegram Trading Bot",
+    "og:description": "Trade crypto across Sonic, Monad, Ink, HyperEVM, and Plasma chains directly from Telegram."
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Getting Started",
+        "pages": [
+          "getting-started/create-wallet",
+          "getting-started/fund-wallet",
+          "getting-started/connect-chains",
+          "getting-started/security-tips"
+        ]
+      },
+      {
+        "group": "Trading",
+        "pages": [
+          "trading/buy-tokens",
+          "trading/sell-tokens",
+          "trading/limit-orders",
+          "trading/dca-orders",
+          "trading/slippage-settings"
+        ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/supported-chains",
+          "features/bridge",
+          "features/wrap-unwrap",
+          "features/referrals",
+          "features/rakeback"
+        ]
+      },
+      {
+        "group": "Wallet",
+        "pages": [
+          "wallet/manage-wallets",
+          "wallet/export-keys",
+          "wallet/withdraw-funds",
+          "wallet/transaction-history"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/common-issues",
+          "troubleshooting/failed-transactions",
+          "troubleshooting/contact-support"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "reference/commands",
+          "reference/fees",
+          "reference/chain-details"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Community",
+        "href": "https://t.me/AceBotCommunity"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Launch Bot",
+      "href": "https://t.me/AceBotApp"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/AceBotApp",
+      "telegram": "https://t.me/AceBotCommunity",
+      "github": "https://github.com/acebot",
+      "website": "https://acebot.app"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          {
+            "label": "Website",
+            "href": "https://acebot.app"
+          },
+          {
+            "label": "Launch Bot",
+            "href": "https://t.me/AceBotApp"
+          },
+          {
+            "label": "Documentation",
+            "href": "https://docs.acebot.app"
+          }
+        ]
+      },
+      {
+        "header": "Community",
+        "items": [
+          {
+            "label": "Twitter",
+            "href": "https://x.com/AceBotApp"
+          },
+          {
+            "label": "Telegram",
+            "href": "https://t.me/AceBotCommunity"
+          }
+        ]
+      }
+    ]
+  },
+  "styling": {
+    "eyebrows": "section"
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "seo": {
+    "indexHiddenPages": false
+  }
+}

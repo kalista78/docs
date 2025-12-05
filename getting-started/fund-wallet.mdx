@@ -1,0 +1,160 @@
+---
+title: "Fund Your Wallet"
+sidebarTitle: "Fund Wallet"
+description: "Deposit crypto into your AceBot wallet to start trading."
+icon: "coins"
+---
+
+# Fund Your Wallet
+
+Before you can trade, you need to deposit native tokens into your AceBot wallet.
+
+## Get Your Wallet Address
+
+<Steps>
+  <Step title="Open Balances">
+    Tap **💰 Balances** from the main menu or use the `/balance` command.
+
+    [SCREENSHOT: Main menu with Balances button]
+  </Step>
+
+  <Step title="Copy Your Address">
+    Your wallet address is displayed at the top. Tap to copy it.
+
+    [SCREENSHOT: Balance screen showing address with copy button]
+  </Step>
+</Steps>
+
+## What to Deposit
+
+Deposit the native token for your chosen chain:
+
+| Chain | Native Token | What to Send |
+|-------|-------------|--------------|
+| 🔵 Sonic | S | SONIC tokens |
+| 🟣 Monad | MON | MONAD tokens |
+| 🖤 Ink | ETH | Ethereum |
+| ⚡ HyperEVM | HYPE | HYPE tokens |
+| 🔴 Plasma | XPL | XPL tokens |
+
+<Warning>
+Always send tokens on the correct network. Sending tokens on the wrong chain may result in permanent loss.
+</Warning>
+
+## Funding Methods
+
+### From a Centralized Exchange
+
+<Steps>
+  <Step title="Go to Withdrawal">
+    On your exchange (Binance, Coinbase, OKX, etc.), go to **Withdraw**.
+  </Step>
+
+  <Step title="Select Token and Network">
+    Choose the token you want to send and **make sure to select the correct network**.
+
+    For example:
+    - For Sonic: Select "Sonic Network" (not Ethereum)
+    - For Monad: Select "Monad Network"
+  </Step>
+
+  <Step title="Paste Your AceBot Address">
+    Paste the wallet address you copied from AceBot.
+  </Step>
+
+  <Step title="Confirm and Send">
+    Enter the amount and confirm the withdrawal. Funds typically arrive within minutes.
+  </Step>
+</Steps>
+
+### From Another Wallet
+
+If you have tokens in MetaMask, Rabby, or another wallet:
+
+<Steps>
+  <Step title="Connect to Correct Network">
+    Make sure your wallet is connected to the same network as your AceBot wallet.
+  </Step>
+
+  <Step title="Send Tokens">
+    Send native tokens to your AceBot wallet address.
+  </Step>
+</Steps>
+
+### Using the Bridge
+
+If you have tokens on a different chain, use AceBot's built-in bridge:
+
+<Steps>
+  <Step title="Open Bridge">
+    Tap **🌉 Bridge** from the main menu.
+  </Step>
+
+  <Step title="Select Chains">
+    Choose your source chain (where tokens are) and destination chain (where you want them).
+  </Step>
+
+  <Step title="Enter Amount">
+    Select the amount to bridge and confirm.
+  </Step>
+</Steps>
+
+<Info>
+The bridge requires you to already have funds on one chain. If you're starting fresh, deposit from an exchange first.
+</Info>
+
+## Check Your Balance
+
+After sending tokens:
+
+1. Wait a few minutes for the transaction to confirm
+2. Tap **💰 Balances** or use `/balance`
+3. Your balance updates automatically (refreshes every 15 seconds)
+
+[SCREENSHOT: Balance screen showing funded wallet]
+
+## Recommended Starting Amounts
+
+For testing and getting familiar with AceBot:
+
+| Chain | Suggested Starting Amount |
+|-------|--------------------------|
+| 🔵 Sonic | 50-100 S |
+| 🟣 Monad | 10-50 MON |
+| 🖤 Ink | 0.01-0.05 ETH |
+| ⚡ HyperEVM | 5-20 HYPE |
+| 🔴 Plasma | 100-500 XPL |
+
+<Tip>
+Start small until you're comfortable with the trading flow. You can always add more funds later.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="My balance shows 0 after sending">
+    - Wait 2-3 minutes for the transaction to confirm
+    - Make sure you sent to the correct address
+    - Verify you selected the correct network on the sending side
+    - Use `/balance` to force a refresh
+  </Accordion>
+
+  <Accordion title="I sent to the wrong network">
+    If you sent tokens on the wrong network, they may be inaccessible. Contact the exchange or use recovery tools if available. This is why starting with small amounts is recommended.
+  </Accordion>
+
+  <Accordion title="Transaction is pending for too long">
+    Network congestion can delay transactions. Check a block explorer for your chain to see the transaction status.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Buy Your First Token" icon="cart-shopping" href="/trading/buy-tokens">
+    Make your first trade
+  </Card>
+  <Card title="Connect More Chains" icon="link" href="/getting-started/connect-chains">
+    Trade on multiple networks
+  </Card>
+</CardGroup>

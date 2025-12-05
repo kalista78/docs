@@ -1,0 +1,180 @@
+---
+title: "Export Private Keys"
+sidebarTitle: "Export Keys"
+description: "Securely access and back up your wallet private keys."
+icon: "key"
+---
+
+# Export Private Keys
+
+For security, AceBot never displays private keys in Telegram chat. Instead, a secure external portal is provided for key access.
+
+## Why Keys Aren't Shown in Chat
+
+Displaying private keys in Telegram creates risks:
+- **Screenshots** — Anyone with access to your phone could capture them
+- **Message history** — Keys could remain in chat logs
+- **Screen recording** — Malware could capture the display
+- **Shoulder surfing** — Someone could see your screen
+
+AceBot's approach protects you from these vectors.
+
+## Accessing Your Private Keys
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Select Your Wallet">
+    Tap on the wallet you want to export.
+  </Step>
+
+  <Step title="View Key Access Info">
+    Look for **Secure Key Info** or similar option.
+
+    You'll see information about how to access the secure portal.
+
+    [SCREENSHOT: Secure key info display]
+  </Step>
+
+  <Step title="Access Secure Portal">
+    If available, you'll receive a link to a secure web portal where you can:
+    - View your private key
+    - Copy it for backup
+    - Export wallet credentials
+
+    <Warning>
+    Only access this portal on a secure, private device. Never on public computers or networks.
+    </Warning>
+  </Step>
+</Steps>
+
+## If No Portal Is Available
+
+If the secure portal isn't configured for your instance:
+- Contact support through official channels
+- Request manual key export assistance
+- Never share account details in public channels
+
+## Best Practices for Key Backup
+
+<AccordionGroup>
+  <Accordion title="Store offline" icon="hard-drive">
+    Write down your private key on paper or store it on an offline device. Digital storage on connected devices is risky.
+  </Accordion>
+
+  <Accordion title="Use multiple copies" icon="copy">
+    Keep backups in multiple secure locations. If one is lost or damaged, you have alternatives.
+  </Accordion>
+
+  <Accordion title="Never share" icon="user-secret">
+    Your private key grants full control of your wallet. Never share it with anyone, including "support" staff.
+  </Accordion>
+
+  <Accordion title="Consider hardware wallet" icon="microchip">
+    For large amounts, consider transferring to a hardware wallet (Ledger, Trezor) for maximum security.
+  </Accordion>
+</AccordionGroup>
+
+## What to Do With Your Private Key
+
+Once you have your private key, you can:
+
+### Import to Other Wallets
+Use your key to access the same wallet in:
+- MetaMask
+- Rabby
+- Trust Wallet
+- Any EVM-compatible wallet
+
+This doesn't affect your AceBot wallet — both can access the same funds.
+
+### Backup for Recovery
+If you lose access to your Telegram account:
+- Your AceBot account becomes inaccessible
+- With your private key, you can recover funds to any wallet
+
+### Migrate to Hardware Wallet
+For long-term storage:
+1. Set up a hardware wallet
+2. Generate a new address
+3. Transfer funds from AceBot wallet to hardware wallet
+4. Keep small trading amounts in AceBot
+
+## Security Warnings
+
+<Warning>
+**Never share your private key with anyone.**
+
+AceBot support will never ask for your private key. Anyone who asks is attempting to steal your funds.
+</Warning>
+
+<Warning>
+**Verify URLs carefully.**
+
+Phishing sites may impersonate the secure portal. Only access through official AceBot links.
+</Warning>
+
+<Warning>
+**Use secure devices.**
+
+Access keys only on devices you control, with no malware, on private networks.
+</Warning>
+
+## If Your Key Is Compromised
+
+If you suspect someone has access to your private key:
+
+<Steps>
+  <Step title="Act immediately">
+    Don't wait — compromised keys can lead to instant fund loss.
+  </Step>
+
+  <Step title="Create new wallet">
+    Create a new wallet in AceBot immediately.
+  </Step>
+
+  <Step title="Transfer funds">
+    Move all funds from the compromised wallet to your new wallet as fast as possible.
+  </Step>
+
+  <Step title="Delete compromised wallet">
+    Remove the old wallet from AceBot once emptied.
+  </Step>
+
+  <Step title="Update any integrations">
+    If you used the key elsewhere, update those too.
+  </Step>
+</Steps>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I see my private key in Telegram?">
+    No. Private keys are never displayed in Telegram chat for security reasons.
+  </Accordion>
+
+  <Accordion title="What if I lose my Telegram account?">
+    Without the private key backed up, you lose access to your wallet. This is why backup is essential.
+  </Accordion>
+
+  <Accordion title="Can AceBot recover my key?">
+    Your keys are encrypted with a system secret. Recovery depends on your account access and the specific setup.
+  </Accordion>
+
+  <Accordion title="Is it safe to import my AceBot key elsewhere?">
+    Yes. Your key works on any EVM-compatible wallet. Just ensure you're using legitimate wallet software.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Wallets" icon="folder-open" href="/wallet/manage-wallets">
+    Organize your wallets
+  </Card>
+  <Card title="Security Tips" icon="shield" href="/getting-started/security-tips">
+    Keep your funds safe
+  </Card>
+</CardGroup>

@@ -1,0 +1,257 @@
+---
+title: "Chain Technical Details"
+sidebarTitle: "Chain Details"
+description: "Technical specifications and details for each supported blockchain."
+icon: "microchip"
+---
+
+# Chain Technical Details
+
+Technical specifications for each blockchain supported by AceBot.
+
+## 🔵 Sonic
+
+| Property | Value |
+|----------|-------|
+| **Chain ID** | 146 |
+| **Native Token** | S (SONIC) |
+| **Wrapped Token** | wS |
+| **Block Time** | ~1 second |
+| **Finality** | Instant |
+| **EVM Compatible** | Yes |
+
+### Explorers
+- **Primary:** [sonicscan.org](https://sonicscan.org)
+
+### DEX Routing
+| Aggregator | Status |
+|------------|--------|
+| Fly | Primary |
+| OpenOcean | Secondary |
+
+### Bridging
+- Hyperlane Warp Route
+- Li.Fi integration
+
+---
+
+## 🟣 Monad
+
+| Property | Value |
+|----------|-------|
+| **Chain ID** | 143 |
+| **Native Token** | MON (MONAD) |
+| **Wrapped Token** | wMON |
+| **Block Time** | ~1 second |
+| **Finality** | Near-instant |
+| **EVM Compatible** | Yes |
+
+### Explorers
+- **Primary:** [monadvision.com](https://monadvision.com)
+
+### DEX Routing
+| Aggregator | Status |
+|------------|--------|
+| 0x Protocol | Primary |
+| OpenOcean | Secondary |
+
+### Key Addresses
+| Contract | Address |
+|----------|---------|
+| USDC | `0x754704Bc059F8C67012fEd69BC8A327a5aafb603` |
+
+### Bridging
+- Li.Fi integration
+
+---
+
+## 🖤 Ink
+
+| Property | Value |
+|----------|-------|
+| **Chain ID** | 57073 |
+| **Native Token** | ETH |
+| **Wrapped Token** | wETH |
+| **Block Time** | ~2 seconds |
+| **Finality** | Near-instant |
+| **EVM Compatible** | Yes |
+| **Layer** | L2 (Ethereum) |
+
+### Explorers
+- **Primary:** [explorer.inkonchain.com](https://explorer.inkonchain.com)
+
+### DEX Routing
+| Aggregator | Status |
+|------------|--------|
+| Fly | Primary |
+| 0x Protocol | Secondary |
+| OpenOcean | Tertiary |
+
+### Key Addresses
+| Contract | Address |
+|----------|---------|
+| Wrapped ETH | `0x4200000000000000000000000000000000000006` |
+
+### Bridging
+- Ink Bridge Hub
+- Li.Fi integration
+
+---
+
+## ⚡ HyperEVM
+
+| Property | Value |
+|----------|-------|
+| **Chain ID** | 999 |
+| **Native Token** | HYPE |
+| **Wrapped Token** | wHYPE |
+| **Block Time** | ~1 second |
+| **Finality** | Near-instant |
+| **EVM Compatible** | Yes |
+
+### Explorers
+- **Primary:** [hyperevmscan.io](https://hyperevmscan.io)
+
+### DEX Routing
+| DEX/Aggregator | Style | Status |
+|----------------|-------|--------|
+| HyperswapV2 | Uniswap V2 | Active |
+| HyperswapV3 | Algebra | Active |
+| Liqd | Aggregator | Primary |
+| Hyperbloom | Aggregator | Secondary |
+| OpenOcean | Aggregator | Tertiary |
+
+### Price Feeds
+- DexScreener
+- LiquidScan
+
+### Bridging
+- LayerZero
+- Li.Fi integration
+
+---
+
+## 🔴 Plasma
+
+| Property | Value |
+|----------|-------|
+| **Chain ID** | 9745 |
+| **Native Token** | XPL |
+| **Wrapped Token** | wXPL |
+| **Block Time** | ~1 second |
+| **Finality** | Near-instant |
+| **EVM Compatible** | Yes |
+| **Layer** | L3 Rollup |
+
+### Explorers
+- **Primary:** [plasmascan.to](https://plasmascan.to)
+
+### DEX Routing
+| Aggregator | Status |
+|------------|--------|
+| 0x Protocol | Primary |
+| OpenOcean | Secondary |
+
+### Bridging
+- Stargate (Official)
+- Jumper (Li.Fi)
+
+---
+
+## Feature Matrix
+
+| Feature | Sonic | Monad | Ink | HyperEVM | Plasma |
+|---------|:-----:|:-----:|:---:|:--------:|:------:|
+| **Direct Trading** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Limit Orders** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **DCA Orders** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Wrap/Unwrap** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Bridge (Li.Fi)** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Rakeback** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **EIP-1559 Gas** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Multicall** | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+## Rakeback Volume Tiers by Chain
+
+Volume thresholds are denominated in each chain's native token.
+
+### Sonic (S)
+| Tier | Volume Required |
+|------|-----------------|
+| Rookie | 0 - 40,000 |
+| Bronze | 40,000 - 200,000 |
+| Silver | 200,000 - 750,000 |
+| Gold | 750,000 - 4,000,000 |
+| Platinum | 4,000,000 - 15,000,000 |
+| Diamond | 15,000,000 - 75,000,000 |
+| Apex | 75,000,000+ |
+
+### Monad / Ink (ETH-equivalent)
+| Tier | Volume Required |
+|------|-----------------|
+| Rookie | 0 - 1.5 |
+| Bronze | 1.5 - 8 |
+| Silver | 8 - 30 |
+| Gold | 30 - 150 |
+| Platinum | 150 - 600 |
+| Diamond | 600 - 3,000 |
+| Apex | 3,000+ |
+
+### HyperEVM (HYPE)
+| Tier | Volume Required |
+|------|-----------------|
+| Rookie | 0 - 130 |
+| Bronze | 130 - 650 |
+| Silver | 650 - 2,500 |
+| Gold | 2,500 - 13,000 |
+| Platinum | 13,000 - 50,000 |
+| Diamond | 50,000 - 250,000 |
+| Apex | 250,000+ |
+
+### Plasma (XPL)
+| Tier | Volume Required |
+|------|-----------------|
+| Rookie | 0 - 20,000 |
+| Bronze | 20,000 - 95,000 |
+| Silver | 95,000 - 380,000 |
+| Gold | 380,000 - 2,000,000 |
+| Platinum | 2,000,000 - 7,500,000 |
+| Diamond | 7,500,000 - 38,000,000 |
+| Apex | 38,000,000+ |
+
+## Minimum Claim Thresholds
+
+| Chain | Minimum Rakeback Claim |
+|-------|------------------------|
+| 🔵 Sonic | 150 S |
+| 🟣 Monad | 0.005 MON |
+| 🖤 Ink | 0.005 ETH |
+| ⚡ HyperEVM | 0.5 HYPE |
+| 🔴 Plasma | 75 XPL |
+
+## RPC Information
+
+<Info>
+AceBot handles RPC connections automatically. You don't need to configure anything manually.
+</Info>
+
+For advanced users who want to add chains to external wallets:
+
+| Chain | Sample RPC |
+|-------|------------|
+| Sonic | `rpc.soniclabs.com` |
+| Monad | `rpc.monad.xyz` |
+| Ink | `rpc-gel.inkonchain.com` |
+| HyperEVM | `rpc.hyperliquid.xyz/evm` |
+| Plasma | `rpc.plasma.to` |
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Supported Chains" icon="link" href="/features/supported-chains">
+    User-focused chain guide
+  </Card>
+  <Card title="Bridge" icon="bridge" href="/features/bridge">
+    Cross-chain transfers
+  </Card>
+</CardGroup>

@@ -1,0 +1,214 @@
+---
+title: "Wrap & Unwrap Tokens"
+sidebarTitle: "Wrap/Unwrap"
+description: "Convert between native and wrapped versions of tokens for trading flexibility."
+icon: "repeat"
+---
+
+# Wrap & Unwrap Tokens
+
+Some DEXs and trading strategies require wrapped versions of native tokens. AceBot lets you easily convert between native and wrapped tokens.
+
+## What is Wrapping?
+
+Wrapping converts your native chain token to an ERC-20 compatible version:
+
+| Chain | Native | Wrapped |
+|-------|--------|---------|
+| 🔵 Sonic | S | wS |
+| 🟣 Monad | MON | wMON |
+| 🖤 Ink | ETH | wETH |
+| ⚡ HyperEVM | HYPE | wHYPE |
+| 🔴 Plasma | XPL | wXPL |
+
+**Why wrap?**
+- Some trading pairs require wrapped tokens
+- Certain DeFi protocols only accept ERC-20 tokens
+- Some limit orders or advanced features may need wrapped versions
+
+**Why unwrap?**
+- Pay gas fees (requires native tokens)
+- Transfer to exchanges that only accept native
+- Reduce complexity in your wallet
+
+## Quick Commands
+
+```
+/wrapnow 10          # Wrap 10 native tokens
+/wrapnow 50%         # Wrap 50% of your native balance
+/unwrapnow 5         # Unwrap 5 wrapped tokens
+/unwrapnow 100%      # Unwrap all wrapped tokens
+```
+
+## Wrap Tokens (Menu)
+
+<Steps>
+  <Step title="Open Wrap/Unwrap">
+    Tap **🔄 Wrap/Unwrap** from the main menu, or use `/converts`.
+
+    [SCREENSHOT: Main menu with Wrap/Unwrap button]
+  </Step>
+
+  <Step title="Select Chain">
+    Choose which chain you want to wrap tokens on.
+  </Step>
+
+  <Step title="Select Wallet">
+    Choose the wallet containing your native tokens.
+
+    [SCREENSHOT: Wallet selection showing balances]
+  </Step>
+
+  <Step title="Choose Wrap">
+    Select **Wrap** to convert native → wrapped.
+  </Step>
+
+  <Step title="Enter Amount">
+    Select how much to wrap:
+    - Enter a specific amount
+    - Enter a percentage (e.g., 50%)
+    - Select a preset amount
+
+    [SCREENSHOT: Amount entry for wrap]
+  </Step>
+
+  <Step title="Confirm">
+    Review the conversion and tap **Confirm**.
+
+    <Warning>
+    If wrapping more than 80% of your balance, you'll see an extra confirmation to ensure you leave enough for gas.
+    </Warning>
+  </Step>
+</Steps>
+
+## Unwrap Tokens (Menu)
+
+<Steps>
+  <Step title="Open Wrap/Unwrap">
+    Tap **🔄 Wrap/Unwrap** from the main menu.
+  </Step>
+
+  <Step title="Select Chain">
+    Choose which chain you want to unwrap tokens on.
+  </Step>
+
+  <Step title="Select Wallet">
+    Choose the wallet containing your wrapped tokens.
+  </Step>
+
+  <Step title="Choose Unwrap">
+    Select **Unwrap** to convert wrapped → native.
+  </Step>
+
+  <Step title="Enter Amount">
+    Select how much to unwrap:
+    - Enter a specific amount
+    - Enter a percentage
+    - Use MAX to unwrap all
+
+    [SCREENSHOT: Amount entry for unwrap]
+  </Step>
+
+  <Step title="Confirm">
+    Review and confirm the conversion.
+  </Step>
+</Steps>
+
+## When to Wrap vs Unwrap
+
+<Tabs>
+  <Tab title="Wrap When">
+    - A DEX pair requires the wrapped token
+    - You want to provide liquidity
+    - A specific trading feature needs ERC-20 tokens
+    - You're using certain DeFi protocols
+  </Tab>
+
+  <Tab title="Unwrap When">
+    - You need native tokens for gas
+    - You're withdrawing to an exchange
+    - You're bridging (most bridges use native)
+    - You want simpler wallet management
+  </Tab>
+</Tabs>
+
+## Wrap/Unwrap Fees
+
+Wrapping and unwrapping only costs gas — there's no protocol fee. It's a simple smart contract interaction that:
+- Wrap: Takes native token, gives wrapped token 1:1
+- Unwrap: Takes wrapped token, gives native token 1:1
+
+<Info>
+Keep some native tokens unwrapped for gas. If you wrap everything, you won't be able to pay for transactions.
+</Info>
+
+## High Balance Warning
+
+When wrapping more than 80% of your native balance, AceBot shows a confirmation:
+
+```
+⚠️ You are about to wrap X tokens (Y% of balance).
+Are you sure you want to continue?
+
+[✅ Confirm] [❌ Cancel]
+```
+
+This protects you from accidentally wrapping all your gas funds.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Wrap/unwrap failed" icon="xmark">
+    Common causes:
+    - Insufficient balance for gas
+    - Amount exceeds balance
+    - Network congestion
+
+    Solution: Ensure you have enough native tokens for gas and try again.
+  </Accordion>
+
+  <Accordion title="Can't see wrapped tokens" icon="eye-slash">
+    - Use `/balance` to refresh
+    - Wrapped tokens appear as a separate balance
+    - Check you're viewing the correct chain
+  </Accordion>
+
+  <Accordion title="Wrapped too much, can't pay gas" icon="gas-pump">
+    If you wrapped all your native tokens:
+    - Bridge a small amount from another chain
+    - Receive tokens from another wallet
+    - Use an exchange to send native tokens
+
+    In future, use the 80% warning as a guide.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+1. **Keep 10-20% native** — Always maintain a reserve for gas
+2. **Wrap only what you need** — Most trading works with native tokens
+3. **Unwrap before bridging** — Most bridges use native tokens
+4. **Check requirements** — Verify if your trade actually needs wrapped tokens
+
+## Wrapped Token Addresses
+
+| Chain | Wrapped Token Address |
+|-------|----------------------|
+| Sonic | View in explorer |
+| Ink | 0x4200000000000000000000000000000000000006 |
+| HyperEVM | View in explorer |
+
+<Tip>
+AceBot handles wrapped token addresses automatically. You don't need to manually enter them for wrap/unwrap operations.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Bridge Tokens" icon="bridge" href="/features/bridge">
+    Move tokens between chains
+  </Card>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Trade with your tokens
+  </Card>
+</CardGroup>

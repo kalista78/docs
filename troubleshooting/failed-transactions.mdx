@@ -1,0 +1,236 @@
+---
+title: "Failed Transactions"
+sidebarTitle: "Failed Transactions"
+description: "Understand why transactions fail and how to resolve them."
+icon: "xmark"
+---
+
+# Failed Transactions
+
+When a transaction fails, your funds remain in your wallet. Here's how to diagnose and fix common failure causes.
+
+## Understanding Transaction Failures
+
+When a transaction fails:
+1. **Your tokens are safe** — Failed transactions don't move funds
+2. **Gas may be consumed** — Some failures still use gas
+3. **You can retry** — Usually with adjusted settings
+
+## Common Failure Reasons
+
+### Slippage Exceeded
+
+**Error:** "Slippage tolerance exceeded" or "INSUFFICIENT_OUTPUT_AMOUNT"
+
+**What happened:** The price moved more than your allowed slippage between when you submitted and when the transaction executed.
+
+**Fix:**
+<Steps>
+  <Step title="Increase Slippage">
+    Go to **⚙️ Settings** → **Slippage** and increase by 5-10%.
+  </Step>
+  <Step title="Retry Trade">
+    Submit the trade again with higher slippage.
+  </Step>
+</Steps>
+
+**Recommended slippage:**
+| Token Type | Slippage |
+|------------|----------|
+| Stable/Blue chip | 1-3% |
+| Medium volatility | 5-15% |
+| High volatility | 15-30% |
+| New launches | 30-50% |
+
+---
+
+### Insufficient Gas
+
+**Error:** "Insufficient funds for gas" or "Out of gas"
+
+**What happened:** You don't have enough native tokens to pay for the transaction.
+
+**Fix:**
+<Steps>
+  <Step title="Check Balance">
+    Use `/balance` to see your native token balance.
+  </Step>
+  <Step title="Add Funds">
+    Deposit more native tokens (S, MON, ETH, etc.).
+  </Step>
+  <Step title="Reduce Trade Size">
+    If trading native tokens, leave some for gas.
+  </Step>
+</Steps>
+
+<Tip>
+Always keep at least 1-5% of your balance as native tokens for gas.
+</Tip>
+
+---
+
+### Insufficient Balance
+
+**Error:** "Insufficient balance" or "Transfer amount exceeds balance"
+
+**What happened:** You tried to trade more tokens than you have.
+
+**Fix:**
+- Check your actual balance with `/balance`
+- Reduce trade amount
+- Account for any pending transactions
+
+---
+
+### Price Impact Too High
+
+**Error:** "Price impact too high" or similar
+
+**What happened:** Your trade size would move the market price significantly.
+
+**Fix:**
+<Steps>
+  <Step title="Reduce Size">
+    Trade a smaller amount.
+  </Step>
+  <Step title="Split Into Multiple">
+    Do several smaller trades instead of one large one.
+  </Step>
+  <Step title="Use DCA">
+    Spread the trade over time with DCA orders.
+  </Step>
+</Steps>
+
+---
+
+### Token Has Sell Restrictions
+
+**Error:** "Transfer failed" or transaction reverts on sell
+
+**Possible causes:**
+- **Honeypot** — Token designed to prevent selling
+- **Blacklist** — Your address was blocked by the token
+- **Cooldown** — Token has trading cooldown period
+- **Max wallet** — Selling would leave you with invalid amount
+
+**Investigation:**
+1. Check if others can sell (community/socials)
+2. Review token contract on block explorer
+3. Check GoPlus security report
+
+<Warning>
+If it's a honeypot, your funds may be unrecoverable. This is why GoPlus warnings are important.
+</Warning>
+
+---
+
+### Network Congestion
+
+**Error:** Transaction pending for extended time, then fails
+
+**What happened:** Network was too congested and your transaction wasn't included before timing out.
+
+**Fix:**
+- Wait for network congestion to reduce
+- Retry during lower traffic periods
+- Some chains have peak hours — avoid those times
+
+---
+
+### Contract Execution Failed
+
+**Error:** "Execution reverted" or contract-specific error
+
+**Possible causes:**
+- DEX router issue
+- Liquidity pool drained
+- Contract paused
+- Invalid token pair
+
+**Fix:**
+1. Wait and retry — temporary issues often resolve
+2. Try a different token pair
+3. Check if the DEX/token has known issues
+
+## Checking Transaction Status
+
+To investigate a failed transaction:
+
+<Steps>
+  <Step title="Get Transaction Hash">
+    AceBot provides a transaction hash when you submit.
+  </Step>
+  <Step title="Open Block Explorer">
+    Go to the explorer for your chain (sonicscan.org, monadvision.com, etc.).
+  </Step>
+  <Step title="Search Transaction">
+    Paste the transaction hash in the search bar.
+  </Step>
+  <Step title="Check Status">
+    Look for:
+    - **Status:** Success, Failed, or Pending
+    - **Error Message:** If failed, reason is often shown
+    - **Gas Used:** How much gas was consumed
+  </Step>
+</Steps>
+
+## Transaction Still Pending
+
+If your transaction is stuck pending:
+
+| Wait Time | Action |
+|-----------|--------|
+| < 2 min | Normal, just wait |
+| 2-5 min | Check explorer, may be congested |
+| 5-15 min | Likely stuck or failed silently |
+| 15+ min | Transaction probably failed, retry |
+
+Most stuck transactions eventually fail and can be replaced.
+
+## Recovering From Failures
+
+After a failed transaction:
+
+1. **Verify balance** — Your tokens should still be there
+2. **Diagnose cause** — Use this guide to identify the issue
+3. **Adjust settings** — Fix slippage, amount, or wait for conditions to improve
+4. **Retry** — Submit the transaction again
+
+<Info>
+Failed transactions don't double-spend. If you retry immediately after a failure, you won't lose funds twice.
+</Info>
+
+## Preventing Future Failures
+
+<AccordionGroup>
+  <Accordion title="Set appropriate slippage" icon="sliders">
+    Match slippage to token volatility. Start higher and reduce if trades consistently succeed.
+  </Accordion>
+
+  <Accordion title="Check before trading" icon="magnifying-glass">
+    - Verify token security (GoPlus)
+    - Check liquidity depth
+    - Review price impact
+    - Confirm you have gas
+  </Accordion>
+
+  <Accordion title="Start with small amounts" icon="seedling">
+    Test new tokens with small trades before committing larger amounts.
+  </Accordion>
+
+  <Accordion title="Monitor gas balance" icon="gas-pump">
+    Keep sufficient native tokens for multiple transactions.
+  </Accordion>
+</AccordionGroup>
+
+## When to Contact Support
+
+Contact support if:
+- Transaction succeeded but tokens didn't arrive
+- Funds are missing after a failed transaction
+- You're experiencing repeated failures with correct settings
+- You see an error message not covered here
+
+<Card title="Contact Support" icon="life-ring" href="/troubleshooting/contact-support">
+  Get help from the team
+</Card>

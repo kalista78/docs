@@ -1,0 +1,125 @@
+---
+title: "Create Your Wallet"
+sidebarTitle: "Create Wallet"
+description: "Set up your first trading wallet in AceBot with automatic encryption and security."
+icon: "wallet"
+---
+
+# Create Your Wallet
+
+AceBot creates your first wallet automatically when you start the bot. You can also create additional wallets anytime.
+
+## Automatic Wallet Creation
+
+When you first open AceBot and tap **Start**, the bot:
+
+1. Creates a new wallet with a unique address
+2. Encrypts your private key with AES-256-GCM
+3. Assigns it a default name ("Wallet 001")
+4. Sets it as your default trading wallet
+
+<Info>
+Your private keys are encrypted and stored securely. They are never displayed in Telegram chat.
+</Info>
+
+## Create Additional Wallets
+
+You can create unlimited wallets for different trading strategies or chains.
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu or use the `/wallet` command.
+
+    [SCREENSHOT: Main menu with Wallets button highlighted]
+  </Step>
+
+  <Step title="Select Create Wallet">
+    In the wallet list, tap the **Create Wallet** button.
+
+    [SCREENSHOT: Wallet manager showing Create Wallet option]
+  </Step>
+
+  <Step title="Name Your Wallet">
+    Enter a name for your new wallet (e.g., "Trading", "Long-term Holds", "Monad Main").
+
+    The wallet is created instantly and added to your list.
+
+    [SCREENSHOT: Wallet naming prompt]
+  </Step>
+</Steps>
+
+## Import an Existing Wallet
+
+If you have an existing wallet, you can import it using your private key.
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Select Import Wallet">
+    Tap the **Import Wallet** button.
+  </Step>
+
+  <Step title="Enter Private Key">
+    Paste your private key (64-character hex string with optional 0x prefix).
+
+    <Warning>
+    Your message containing the private key is **automatically deleted** for security. The key is encrypted before storage.
+    </Warning>
+  </Step>
+
+  <Step title="Name and Confirm">
+    Enter a name for the imported wallet. It's now ready to use.
+  </Step>
+</Steps>
+
+## Set Your Default Wallet
+
+Your default wallet is automatically selected for all transactions.
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Select a Wallet">
+    Tap on the wallet you want to set as default.
+  </Step>
+
+  <Step title="Set as Default">
+    Tap **Set as Default**. A checkmark appears next to your default wallet.
+  </Step>
+</Steps>
+
+## Wallet Display
+
+In the wallet list, each wallet shows:
+- **Wallet name** with chain emoji
+- **Balance** in the native token
+- **Checkmark** if it's your default wallet
+- **Last 4 characters** of the address for quick reference
+
+[SCREENSHOT: Wallet list showing multiple wallets with balances]
+
+## Managing Multiple Wallets
+
+With multiple wallets, you can:
+- **Separate strategies** — Use different wallets for different trading approaches
+- **Organize by chain** — Dedicate wallets to specific networks
+- **Distribute risk** — Keep funds spread across multiple wallets
+
+<Tip>
+Use the **Fund Distribution** feature to split funds from one wallet to multiple wallets, or **Fund Consolidation** to gather funds back into one.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Fund Your Wallet" icon="coins" href="/getting-started/fund-wallet">
+    Deposit tokens to start trading
+  </Card>
+  <Card title="Manage Wallets" icon="folder-open" href="/wallet/manage-wallets">
+    Learn advanced wallet operations
+  </Card>
+</CardGroup>

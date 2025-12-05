@@ -1,0 +1,235 @@
+---
+title: "Supported Chains"
+sidebarTitle: "Supported Chains"
+description: "Trade across Sonic, Monad, Ink, HyperEVM, and Plasma with AceBot."
+icon: "link"
+---
+
+# Supported Chains
+
+AceBot is a multi-chain trading platform. Trade on multiple blockchains from a single Telegram interface.
+
+## Available Networks
+
+<CardGroup cols={2}>
+  <Card title="🔵 Sonic" icon="bolt">
+    **Symbol:** S
+
+    Fast gaming-focused blockchain with low fees and quick finality.
+  </Card>
+
+  <Card title="🟣 Monad" icon="circle-nodes">
+    **Symbol:** MON
+
+    High-performance chain optimized for trading with parallel execution.
+  </Card>
+
+  <Card title="🖤 Ink" icon="droplet">
+    **Symbol:** ETH
+
+    Ethereum Layer 2 with low gas fees and EVM compatibility.
+  </Card>
+
+  <Card title="⚡ HyperEVM" icon="bolt-lightning">
+    **Symbol:** HYPE
+
+    Hyperliquid's EVM layer with deep liquidity from the perpetuals DEX.
+  </Card>
+
+  <Card title="🔴 Plasma" icon="fire">
+    **Symbol:** XPL
+
+    Layer 3 rollup designed for scalable trading applications.
+  </Card>
+</CardGroup>
+
+## Chain Details
+
+### 🔵 Sonic
+
+| Property | Value |
+|----------|-------|
+| Chain ID | 146 |
+| Native Token | S (SONIC) |
+| Block Time | ~1 second |
+| Explorer | [sonicscan.org](https://sonicscan.org) |
+
+**Features:**
+- Gaming-focused ecosystem
+- Fast transaction finality
+- Low gas fees
+- Strong DEX liquidity
+
+**Trading on Sonic:**
+- Primary DEX: SpookySwap
+- Aggregators: Fly, OpenOcean
+
+---
+
+### 🟣 Monad
+
+| Property | Value |
+|----------|-------|
+| Chain ID | 143 |
+| Native Token | MON (MONAD) |
+| Block Time | ~1 second |
+| Explorer | [monadvision.com](https://monadvision.com) |
+
+**Features:**
+- Parallel transaction execution
+- Ethereum-compatible
+- Designed for high-frequency trading
+- Growing DeFi ecosystem
+
+**Trading on Monad:**
+- Primary aggregator: 0x Protocol
+- Backup: OpenOcean
+
+---
+
+### 🖤 Ink
+
+| Property | Value |
+|----------|-------|
+| Chain ID | 57073 |
+| Native Token | ETH |
+| Block Time | ~2 seconds |
+| Explorer | [explorer.inkonchain.com](https://explorer.inkonchain.com) |
+
+**Features:**
+- Ethereum Layer 2
+- Full EVM compatibility
+- Lower fees than Ethereum mainnet
+- Bridge from Ethereum
+
+**Trading on Ink:**
+- Aggregators: Fly, 0x, OpenOcean
+
+---
+
+### ⚡ HyperEVM
+
+| Property | Value |
+|----------|-------|
+| Chain ID | 999 |
+| Native Token | HYPE |
+| Block Time | ~1 second |
+| Explorer | [hyperevmscan.io](https://hyperevmscan.io) |
+
+**Features:**
+- Built on Hyperliquid infrastructure
+- Access to deep perpetuals liquidity
+- Dual DEX support (V2 and V3)
+- LayerZero bridging
+
+**Trading on HyperEVM:**
+- DEXs: HyperswapV2, HyperswapV3
+- Aggregators: Liqd, Hyperbloom, OpenOcean
+
+---
+
+### 🔴 Plasma
+
+| Property | Value |
+|----------|-------|
+| Chain ID | 9745 |
+| Native Token | XPL |
+| Block Time | ~1 second |
+| Explorer | [plasmascan.to](https://plasmascan.to) |
+
+**Features:**
+- Layer 3 rollup architecture
+- Designed for scalability
+- Native XPL token swaps
+- Stargate bridging
+
+**Trading on Plasma:**
+- Primary aggregator: 0x Protocol
+- Backup: OpenOcean
+
+## Switching Chains
+
+### Quick Switch
+Use chain emoji buttons in the wallet manager:
+```
+🔵 | 🟣 | 🖤 | ⚡ | 🔴
+```
+
+### Command
+```
+/chain
+```
+
+### Settings
+**⚙️ Settings** → **Manage Chains** → Select your chain
+
+## One Wallet, All Chains
+
+Your AceBot wallet address works on all supported chains. The same address can hold:
+- S tokens on Sonic
+- MON tokens on Monad
+- ETH on Ink
+- HYPE on HyperEVM
+- XPL on Plasma
+
+<Info>
+Each chain requires its own native token for gas fees. Make sure you have native tokens on any chain you want to trade on.
+</Info>
+
+## Feature Availability
+
+| Feature | Sonic | Monad | Ink | HyperEVM | Plasma |
+|---------|:-----:|:-----:|:---:|:--------:|:------:|
+| Buy/Sell | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Limit Orders | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DCA | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Bridge | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Wrap/Unwrap | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Rakeback | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Referrals | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+## Per-Chain Settings
+
+Some features have chain-specific configurations:
+
+### Default Buy Amount
+Set different default buy amounts for each chain:
+1. **⚙️ Settings** → **Default Buy Amount**
+2. Select a chain
+3. Enter your preferred amount
+
+### Rakeback Tiers
+Your trading volume tier is tracked separately per chain. High volume on Sonic doesn't affect your Monad tier.
+
+### Referral Rewards
+Claim rewards independently for each chain. Rewards are paid in the chain's native token.
+
+## Moving Between Chains
+
+Use the built-in bridge to move assets:
+1. Tap **🌉 Bridge**
+2. Select source and destination chains
+3. Enter amount
+4. Confirm transfer
+
+Bridge times vary by chain pair, typically 1-5 minutes.
+
+## Chain Status
+
+Chains may occasionally enter maintenance or experience issues:
+- **Active** — Fully operational
+- **Degraded** — Slower than usual, still functional
+- **Maintenance** — Temporarily unavailable
+
+Check the main menu or community channels for status updates.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Bridge Assets" icon="bridge" href="/features/bridge">
+    Move tokens between chains
+  </Card>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Trade on your chosen chain
+  </Card>
+</CardGroup>

@@ -1,0 +1,194 @@
+---
+title: "Fee Structure"
+sidebarTitle: "Fees"
+description: "Complete breakdown of all fees when using AceBot."
+icon: "receipt"
+---
+
+# Fee Structure
+
+Transparent breakdown of all fees you'll encounter when using AceBot.
+
+## Trading Fees
+
+### Platform Fee
+| Fee | Rate |
+|-----|------|
+| **Trading Fee** | 1% of trade volume |
+
+This fee applies to all buy and sell transactions.
+
+### How Platform Fee Works
+When you trade:
+1. You pay 1% of the trade volume as platform fee
+2. Based on your rakeback tier, you earn back 0-30%
+3. If you were referred, you earn an additional 10% back
+
+**Net fee examples:**
+
+| Your Tier | Referral Bonus | Effective Fee |
+|-----------|----------------|---------------|
+| Rookie | No | 1.00% |
+| Bronze | No | 0.95% |
+| Silver | No | 0.90% |
+| Gold | No | 0.85% |
+| Platinum | No | 0.80% |
+| Diamond | No | 0.75% |
+| Apex | No | 0.70% |
+| Any tier | +10% | -0.10% additional |
+
+**Maximum rakeback:** 40% (minimum effective fee: 0.60%)
+
+## Network Fees (Gas)
+
+Gas fees are paid to the blockchain network, not to AceBot.
+
+| Chain | Typical Gas Cost |
+|-------|------------------|
+| 🔵 Sonic | ~0.001-0.01 S per tx |
+| 🟣 Monad | ~0.001-0.01 MON per tx |
+| 🖤 Ink | ~0.0001-0.001 ETH per tx |
+| ⚡ HyperEVM | ~0.001-0.01 HYPE per tx |
+| 🔴 Plasma | ~0.01-0.1 XPL per tx |
+
+Gas costs vary based on:
+- Network congestion
+- Transaction complexity
+- Gas price settings
+
+## Bridge Fees
+
+When using the cross-chain bridge:
+
+| Fee Type | Description |
+|----------|-------------|
+| **Bridge Protocol Fee** | Set by the bridge protocol (Li.Fi) |
+| **Source Chain Gas** | Gas to initiate the bridge |
+| **Destination Gas** | Sometimes included, sometimes paid separately |
+
+Bridge fees are shown before you confirm each transaction.
+
+**Typical total bridge cost:** $0.50 - $5.00 depending on route and congestion.
+
+## Wallet Operation Fees
+
+### Fund Distribution / Consolidation
+| Fee | Rate |
+|-----|------|
+| **Platform Fee** | 0.1% of transferred amount |
+| **Gas Fees** | Per transaction (network fee) |
+
+These fees apply when distributing funds to multiple wallets or consolidating from multiple wallets.
+
+### Regular Withdrawals
+| Fee | Rate |
+|-----|------|
+| **Platform Fee** | None |
+| **Gas Fee** | Standard network fee |
+
+Standard withdrawals to external addresses only cost gas.
+
+## Wrap/Unwrap Fees
+
+| Fee | Rate |
+|-----|------|
+| **Platform Fee** | None |
+| **Gas Fee** | Standard network fee |
+
+Converting between native and wrapped tokens only costs gas.
+
+## Limit Order / DCA Fees
+
+When your automated orders execute:
+
+| Fee Type | Rate |
+|----------|------|
+| **Trading Fee** | 1% (same as manual trades) |
+| **Gas Fee** | Standard network fee per execution |
+
+For DCA orders, each individual transaction incurs:
+- The trading fee (with rakeback applied)
+- A gas fee
+
+**DCA cost consideration:** Many small DCA transactions can add up in gas. Consider larger, less frequent intervals if gas costs are significant.
+
+## Fee Summary by Action
+
+| Action | Platform Fee | Gas Fee |
+|--------|-------------|---------|
+| Buy tokens | 1% | Yes |
+| Sell tokens | 1% | Yes |
+| Limit order (on execution) | 1% | Yes |
+| DCA (per transaction) | 1% | Yes |
+| Withdraw (standard) | None | Yes |
+| Fund distribution | 0.1% | Yes |
+| Fund consolidation | 0.1% | Yes |
+| Wrap/Unwrap | None | Yes |
+| Bridge | Protocol fee | Yes (both chains) |
+| Claim rewards | None | Yes |
+
+## Reducing Your Effective Fees
+
+### 1. Build Your Rakeback Tier
+Trade more to unlock higher rakeback:
+
+| Tier | Rakeback | Effective Fee |
+|------|----------|---------------|
+| Apex | 30% | 0.70% |
+
+### 2. Sign Up With Referral
+Get an automatic +10% rakeback bonus on all trades.
+
+### 3. Claim Rakeback Regularly
+Don't leave rakeback unclaimed — it's your money back.
+
+### 4. Optimize Gas Usage
+- Trade during low-congestion periods
+- Use larger DCA intervals (fewer transactions)
+- Batch wallet operations when possible
+
+## Rakeback Claim Thresholds
+
+Minimum amounts required to claim rakeback:
+
+| Chain | Minimum |
+|-------|---------|
+| 🔵 Sonic | 150 S |
+| 🟣 Monad | 0.005 MON |
+| 🖤 Ink | 0.005 ETH |
+| ⚡ HyperEVM | 0.5 HYPE |
+| 🔴 Plasma | 75 XPL |
+
+## No Hidden Fees
+
+AceBot is transparent about all fees:
+- **No deposit fees** — Depositing to your wallet is free (just network transfer costs)
+- **No wallet creation fees** — Create unlimited wallets at no cost
+- **No subscription fees** — AceBot is free to use
+- **No inactivity fees** — Your wallet is always available
+
+## Fee Calculation Example
+
+**Scenario:** You buy 100 S worth of tokens, you're Silver tier (10% rakeback) with referral bonus (+10%)
+
+| Component | Amount |
+|-----------|--------|
+| Trade volume | 100 S |
+| Platform fee (1%) | 1 S |
+| Your rakeback (20%) | 0.2 S returned |
+| Net fee paid | 0.8 S |
+| Gas (estimate) | ~0.005 S |
+| **Total cost** | **~0.805 S** |
+
+Your effective fee rate: 0.8%
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Rakeback" icon="percent" href="/features/rakeback">
+    Earn back trading fees
+  </Card>
+  <Card title="Referrals" icon="users" href="/features/referrals">
+    Get bonus rakeback
+  </Card>
+</CardGroup>

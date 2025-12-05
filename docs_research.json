@@ -1,0 +1,172 @@
+{
+  "product": {
+    "name": "AceBot",
+    "tagline": "Multi-Chain Telegram Trading Bot",
+    "description": "Your personal trading companion for multi-chain DeFi trading directly from Telegram"
+  },
+  "supported_chains": [
+    {
+      "name": "Sonic",
+      "symbol": "S",
+      "chainId": 146,
+      "emoji": "🔵",
+      "status": "active",
+      "features": ["trading", "bridge", "wrap_unwrap", "limit_orders", "dca"]
+    },
+    {
+      "name": "Monad",
+      "symbol": "MON",
+      "chainId": 143,
+      "emoji": "🟣",
+      "status": "active",
+      "features": ["trading", "bridge", "wrap_unwrap", "limit_orders", "dca"]
+    },
+    {
+      "name": "Ink",
+      "symbol": "ETH",
+      "chainId": 57073,
+      "emoji": "🖤",
+      "status": "active",
+      "features": ["trading", "bridge", "wrap_unwrap", "limit_orders", "dca"]
+    },
+    {
+      "name": "HyperEVM",
+      "symbol": "HYPE",
+      "chainId": 999,
+      "emoji": "⚡",
+      "status": "active",
+      "features": ["trading", "bridge", "wrap_unwrap", "limit_orders", "dca"]
+    },
+    {
+      "name": "Plasma",
+      "symbol": "XPL",
+      "chainId": 9745,
+      "emoji": "🔴",
+      "status": "active",
+      "features": ["trading", "bridge", "wrap_unwrap", "limit_orders", "dca"]
+    }
+  ],
+  "commands": {
+    "trading": [
+      { "command": "/buy", "syntax": "/buy <token_address> [amount]", "description": "Instantly buy a token" },
+      { "command": "/sell", "syntax": "/sell <token_address> [amount|percentage%]", "description": "Sell a token position" },
+      { "command": "/limit", "syntax": "/limit <token_address> <amount> <@price|%:+/-pct|mc:value> [duration]", "description": "Create limit orders with flexible triggers" },
+      { "command": "/lbuy", "syntax": "/lbuy <token_address>", "description": "Quick limit order for buying" },
+      { "command": "/lsell", "syntax": "/lsell <token_address>", "description": "Quick limit order for selling" },
+      { "command": "/dcabuy", "syntax": "/dcabuy <token_address>", "description": "DCA buy setup" },
+      { "command": "/dcasell", "syntax": "/dcasell <token_address>", "description": "DCA sell setup" },
+      { "command": "/wrapnow", "syntax": "/wrapnow <amount|percentage%>", "description": "Wrap native tokens instantly" },
+      { "command": "/unwrapnow", "syntax": "/unwrapnow <amount|percentage%>", "description": "Unwrap tokens instantly" },
+      { "command": "/bridge", "syntax": "/bridge", "description": "Open cross-chain bridge" }
+    ],
+    "account": [
+      { "command": "/start", "description": "Return to main menu" },
+      { "command": "/chain", "description": "Switch between networks" },
+      { "command": "/wallet", "description": "Manage wallets" },
+      { "command": "/balance", "description": "View token balances" },
+      { "command": "/settings", "description": "Adjust bot settings" },
+      { "command": "/referral", "description": "View referral program and claim rewards" },
+      { "command": "/position", "description": "View active positions and orders" },
+      { "command": "/watchlist", "description": "Manage token watchlist" },
+      { "command": "/help", "description": "Get help" }
+    ]
+  },
+  "main_menu_buttons": {
+    "trading": ["🟢 Buy", "🔴 Sell", "🌉 Bridge", "🔄 Wrap/Unwrap", "🎯 Snipe", "📊 Positions"],
+    "portfolio": ["💰 Balances", "👀 Watchlist", "🤝 Referral", "👛 Wallets"],
+    "system": ["⚙️ Settings", "📖 Help", "🛟 Support"]
+  },
+  "trading_features": {
+    "direct_orders": {
+      "description": "Instant buy/sell at market price",
+      "options": ["amount_presets", "custom_amount", "wallet_selection", "slippage_adjustment"]
+    },
+    "limit_orders": {
+      "description": "Price-triggered automatic execution",
+      "trigger_types": ["token_price", "market_cap", "percentage_change"],
+      "features": ["take_profit", "stop_loss", "duration_setting"]
+    },
+    "dca": {
+      "description": "Dollar Cost Averaging - recurring trades",
+      "configurable": ["amount_per_trade", "interval", "duration", "slippage"]
+    },
+    "liquidity_snipe": {
+      "description": "Auto-buy when liquidity is added",
+      "status": "coming_soon"
+    }
+  },
+  "wallet_features": {
+    "create_wallet": "Generate new HD wallet with encrypted storage",
+    "import_wallet": "Import via private key (message auto-deleted for security)",
+    "multiple_wallets": "Unlimited wallets per user with pagination",
+    "default_wallet": "Set one wallet as default for all transactions",
+    "withdraw_native": "Send native tokens to any address",
+    "withdraw_tokens": "Send ERC-20 tokens to any address",
+    "fund_distribution": "Distribute funds from one wallet to multiple",
+    "fund_consolidation": "Consolidate funds from multiple wallets to one"
+  },
+  "fees_and_rewards": {
+    "platform_fee": "1% of trading volume",
+    "rakeback_tiers": [
+      { "tier": "T0", "name": "Rookie", "emoji": "🃏", "rate": "0%", "volume": "0-40k" },
+      { "tier": "T1", "name": "Bronze", "emoji": "♣️", "rate": "5%", "volume": "40k-200k" },
+      { "tier": "T2", "name": "Silver", "emoji": "♦️", "rate": "10%", "volume": "200k-750k" },
+      { "tier": "T3", "name": "Gold", "emoji": "♥️", "rate": "15%", "volume": "750k-4M" },
+      { "tier": "T4", "name": "Platinum", "emoji": "♠️", "rate": "20%", "volume": "4M-15M" },
+      { "tier": "T5", "name": "Diamond", "emoji": "🎴", "rate": "25%", "volume": "15M-75M" },
+      { "tier": "T6", "name": "Apex", "emoji": "🂡", "rate": "30%", "volume": "75M+" }
+    ],
+    "referral_program": {
+      "referee_bonus": "+10% additional rakeback",
+      "referrer_first_30_days": "30% of referee's effective fee",
+      "referrer_after_30_days": "20% of referee's effective fee",
+      "max_total_rakeback": "40%"
+    },
+    "claim_requirements": {
+      "cooldown": "12 hours between claims",
+      "daily_limit": "10 claims per 24 hours",
+      "minimum_thresholds_per_chain": {
+        "sonic": "150 S",
+        "hyperevm": "0.5 HYPE",
+        "monad": "0.005 MON",
+        "ink": "0.005 ETH",
+        "plasma": "75 XPL"
+      }
+    }
+  },
+  "user_settings": {
+    "slippage": {
+      "direct_order": "0.1-100% (default 50%)",
+      "limit_order": "0.1-100% (default 50%)",
+      "dca": "0.1-100% (default 50%)",
+      "sniper": "0.1-100% (default 50%)"
+    },
+    "defaults": {
+      "buy_amount": "Per-chain configurable (default 5)",
+      "sell_percentage": "1-100% (default 100%)",
+      "dca_interval": "Minutes (default 5)",
+      "dca_duration": "Minutes (default 60)"
+    },
+    "security": {
+      "goplus_enabled": "Token security scanning (default enabled)"
+    },
+    "chain_management": {
+      "active_chains": "Toggle which chains to show",
+      "default_chain": "Set preferred network"
+    }
+  },
+  "bridge_feature": {
+    "provider": "Li.Fi",
+    "supported": "All chain pairs",
+    "assets": "Native tokens only",
+    "default_slippage": "0.3%",
+    "gas_buffer": "10 BPS reserved for gas"
+  },
+  "security_features": {
+    "wallet_encryption": "AES-256-GCM",
+    "key_visibility": "Private keys never shown in Telegram",
+    "import_security": "Messages containing keys auto-deleted",
+    "token_scanning": "GoPlus integration for rug pull detection",
+    "rate_limiting": "Protection against abuse"
+  }
+}

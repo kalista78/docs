@@ -1,0 +1,232 @@
+---
+title: "Common Issues"
+sidebarTitle: "Common Issues"
+description: "Solutions to frequently encountered problems when using AceBot."
+icon: "circle-question"
+---
+
+# Common Issues
+
+Quick solutions to the most frequently encountered problems.
+
+## Trading Issues
+
+<AccordionGroup>
+  <Accordion title="My trade keeps failing" icon="xmark">
+    **Symptoms:** Trade fails with slippage error or reverts.
+
+    **Solutions:**
+    1. **Increase slippage** — Go to Settings → Slippage and increase by 5-10%
+    2. **Check liquidity** — Low liquidity tokens need higher slippage
+    3. **Try smaller amount** — Large trades have more price impact
+    4. **Verify gas balance** — Ensure you have native tokens for gas
+    5. **Wait and retry** — Network congestion can cause temporary failures
+
+    If issues persist, the token may have trading restrictions.
+  </Accordion>
+
+  <Accordion title="Got less tokens than expected" icon="chart-line-down">
+    **Symptoms:** Received tokens are significantly less than the quote showed.
+
+    **Causes:**
+    - **Price movement** — Market moved between quote and execution
+    - **Slippage** — Trade executed within your slippage tolerance
+    - **Price impact** — Your trade size moved the market
+    - **Token taxes** — Some tokens have buy/sell taxes
+
+    **Prevention:**
+    - Check token taxes before trading
+    - Use lower slippage for stable tokens
+    - Split large trades into smaller ones
+  </Accordion>
+
+  <Accordion title="Can't sell a token (honeypot)" icon="honey-pot">
+    **Symptoms:** Buy works but sell fails.
+
+    **Cause:** The token is likely a honeypot — designed to trap your funds.
+
+    **Solutions:**
+    - Unfortunately, if it's a honeypot, recovery is usually impossible
+    - In future, check GoPlus security warnings before buying
+    - Verify tokens on [honeypot.is](https://honeypot.is) before trading
+
+    **Prevention:**
+    - Keep GoPlus security enabled in Settings
+    - Be cautious with unknown tokens
+    - Start with small test amounts
+  </Accordion>
+
+  <Accordion title="Trade stuck on 'Processing'" icon="spinner">
+    **Symptoms:** Trade shows processing but never completes.
+
+    **Solutions:**
+    1. Wait 2-3 minutes — transactions can take time during congestion
+    2. Check your balance — funds may have moved even if status didn't update
+    3. Use `/balance` to force refresh
+    4. Check block explorer with transaction hash
+
+    If truly stuck, the transaction will eventually timeout.
+  </Accordion>
+</AccordionGroup>
+
+## Wallet Issues
+
+<AccordionGroup>
+  <Accordion title="Balance shows 0 after depositing" icon="0">
+    **Symptoms:** Deposited tokens but balance shows zero.
+
+    **Solutions:**
+    1. **Wait for confirmation** — Deposits can take 1-5 minutes
+    2. **Force refresh** — Use `/balance` command
+    3. **Check correct chain** — Make sure you're viewing the right network
+    4. **Verify transaction** — Check your sending wallet's explorer for confirmation
+
+    **Common mistakes:**
+    - Sent tokens on wrong network
+    - Sent to wrong address (typo)
+    - Transaction still pending on source
+  </Accordion>
+
+  <Accordion title="Can't find my wallet" icon="magnifying-glass">
+    **Symptoms:** Wallet doesn't appear in the list.
+
+    **Solutions:**
+    1. **Check pagination** — Use ⬅️ ➡️ buttons to navigate pages
+    2. **Refresh** — Close and reopen wallet manager
+    3. **Verify account** — Ensure you're in the correct Telegram account
+
+    Wallets cannot be recovered if:
+    - They were deleted
+    - You're using a different Telegram account
+    - You never created/imported them
+  </Accordion>
+
+  <Accordion title="Withdrawal failed" icon="money-bill-wave">
+    **Symptoms:** Withdrawal transaction fails or reverts.
+
+    **Solutions:**
+    1. **Check gas** — Ensure enough native tokens for gas
+    2. **Verify address** — Make sure destination is valid
+    3. **Try smaller amount** — Leave some for gas fees
+    4. **Retry** — Network issues can cause temporary failures
+
+    If withdrawing to an exchange, verify you have the correct deposit address for that specific chain.
+  </Accordion>
+</AccordionGroup>
+
+## Bot Issues
+
+<AccordionGroup>
+  <Accordion title="Bot not responding" icon="robot">
+    **Symptoms:** No response when tapping buttons or sending commands.
+
+    **Solutions:**
+    1. **Send /start** — Reset the bot session
+    2. **Wait** — The bot may be temporarily busy
+    3. **Check Telegram** — Ensure your connection is stable
+    4. **Try later** — The bot may be under maintenance
+
+    If issues persist for more than 15 minutes, check community channels for announcements.
+  </Accordion>
+
+  <Accordion title="Commands not working" icon="terminal">
+    **Symptoms:** Commands like /buy or /balance don't work.
+
+    **Solutions:**
+    1. **Check syntax** — Ensure command format is correct
+    2. **Use menu buttons** — Alternative to commands
+    3. **Reset with /start** — Clear any stuck states
+    4. **Verify bot** — Make sure you're using @AceBotApp
+  </Accordion>
+
+  <Accordion title="Buttons not appearing" icon="square">
+    **Symptoms:** Menus show without buttons or buttons don't respond.
+
+    **Solutions:**
+    1. **Tap /start** — Regenerates the main menu
+    2. **Update Telegram** — Older versions may have issues
+    3. **Check connection** — Slow connection can delay button loading
+    4. **Restart Telegram** — Force close and reopen
+  </Accordion>
+</AccordionGroup>
+
+## Chain Issues
+
+<AccordionGroup>
+  <Accordion title="Wrong chain selected" icon="link-slash">
+    **Symptoms:** Trying to trade but tokens are on different chain.
+
+    **Solutions:**
+    1. **Switch chains** — Use `/chain` or Settings → Manage Chains
+    2. **Bridge tokens** — Move tokens to desired chain
+    3. **Check balances** — Verify where your tokens actually are
+  </Accordion>
+
+  <Accordion title="Chain shows unavailable" icon="triangle-exclamation">
+    **Symptoms:** A chain is grayed out or shows error.
+
+    **Causes:**
+    - Chain under maintenance
+    - RPC issues
+    - Temporarily disabled
+
+    **Solutions:**
+    - Wait and try again later
+    - Use a different chain
+    - Check community announcements for status updates
+  </Accordion>
+</AccordionGroup>
+
+## Security Issues
+
+<AccordionGroup>
+  <Accordion title="Suspicious DM claiming to be support" icon="user-secret">
+    **This is a SCAM.** Real AceBot support:
+    - Never DMs you first
+    - Never asks for private keys
+    - Never asks for account passwords
+    - Only communicates through official channels
+
+    **What to do:**
+    1. Block the scammer
+    2. Report to Telegram
+    3. Warn the community
+    4. Never share any credentials
+  </Accordion>
+
+  <Accordion title="Token flagged by security" icon="shield-halved">
+    **Symptoms:** GoPlus warning when trying to trade.
+
+    **What warnings mean:**
+    - **Honeypot risk** — May not be able to sell
+    - **High tax** — Significant buy/sell fees
+    - **Blacklist** — Token can freeze your holdings
+
+    **Decision:**
+    - If you trust the token, you can proceed (at your risk)
+    - Consider waiting for the project to address issues
+    - When in doubt, don't trade
+  </Accordion>
+</AccordionGroup>
+
+## Quick Fixes Summary
+
+| Issue | Quick Fix |
+|-------|-----------|
+| Trade failing | Increase slippage |
+| Balance not updating | Use `/balance` |
+| Bot not responding | Send `/start` |
+| Wrong chain | Use `/chain` |
+| Can't find feature | Check main menu |
+| Transaction pending | Wait 2-3 minutes |
+
+## Still Need Help?
+
+<CardGroup cols={2}>
+  <Card title="Failed Transactions" icon="xmark" href="/troubleshooting/failed-transactions">
+    Detailed transaction troubleshooting
+  </Card>
+  <Card title="Contact Support" icon="life-ring" href="/troubleshooting/contact-support">
+    Get help from the team
+  </Card>
+</CardGroup>

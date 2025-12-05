@@ -1,0 +1,269 @@
+---
+title: "Limit Orders"
+sidebarTitle: "Limit Orders"
+description: "Set buy or sell orders that execute automatically when your target price is reached."
+icon: "crosshairs"
+---
+
+# Limit Orders
+
+Limit orders let you set trades that execute automatically when specific conditions are met. No need to watch charts — AceBot handles it for you.
+
+## What Are Limit Orders?
+
+A limit order is an instruction to buy or sell when:
+- Token reaches a specific **price**
+- Token reaches a specific **market cap**
+- Token moves by a specific **percentage**
+
+Once your condition is met, the trade executes automatically.
+
+## Quick Limit Order Command
+
+```
+/limit 0x1234...5678 5 @0.0015 24H
+```
+
+This creates a buy order for 5 tokens when price reaches $0.0015, valid for 24 hours.
+
+### Command Syntax
+
+```
+/limit <token_address> <amount|percent%> <trigger> [duration]
+```
+
+**Trigger types:**
+- `@price` — Target price (e.g., `@0.0015`)
+- `%:+/-pct` — Percentage change (e.g., `%:+25` or `%:-30`)
+- `mc:value` — Market cap target (e.g., `mc:500k`, `mc:2m`, `mc:1.5b`)
+
+**Duration:** How long the order stays active (e.g., `24H`, `3D`)
+
+### Examples
+
+```
+/limit 0xabc...def 5 @0.001          # Buy when price hits $0.001
+/limit 0xabc...def 50% %:-20         # Sell 50% when price drops 20%
+/limit 0xabc...def 10 mc:500k        # Buy when market cap hits 500k
+/limit 0xabc...def 25% %:+100 3D     # Sell 25% when price doubles, valid 3 days
+```
+
+## Create a Limit Order (Menu)
+
+<Steps>
+  <Step title="Open Limit Orders">
+    From the main menu, tap **📊 Positions** → **Limit Orders**, or start a trade and select **Limit Order** type.
+
+    [SCREENSHOT: Trading type selection showing Limit Order option]
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the token contract address.
+  </Step>
+
+  <Step title="Select Wallet and Direction">
+    Choose your wallet and whether this is a buy or sell order.
+  </Step>
+
+  <Step title="Choose Trigger Type">
+    Select how you want to trigger the order:
+
+    <Tabs>
+      <Tab title="Price Target">
+        Enter a specific price (e.g., $0.0015).
+
+        - For **buy orders**: Triggers when price drops TO this level
+        - For **sell orders**: Triggers when price rises TO this level
+      </Tab>
+
+      <Tab title="Percentage Change">
+        Enter a percentage change from current price:
+
+        - **+25%** — Triggers when price rises 25%
+        - **-30%** — Triggers when price drops 30%
+      </Tab>
+
+      <Tab title="Market Cap">
+        Enter a target market cap:
+
+        - **500k** — 500,000
+        - **2m** — 2,000,000
+        - **1.5b** — 1,500,000,000
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Set Amount">
+    - For **buy orders**: Enter amount in native tokens
+    - For **sell orders**: Enter percentage of your position (25%, 50%, 100%, etc.)
+  </Step>
+
+  <Step title="Configure Take Profit (Optional)">
+    Set automatic profit-taking once your buy executes:
+
+    - **Trigger**: Price increase percentage or target price
+    - **Amount**: Percentage of tokens to sell
+
+    Example: Sell 50% when price rises 100% from entry.
+  </Step>
+
+  <Step title="Configure Stop Loss (Optional)">
+    Set automatic loss-limiting:
+
+    - **Trigger**: Price decrease percentage or target price
+    - **Amount**: Usually 100% (exit entire position)
+
+    Example: Sell all if price drops 30% from entry.
+  </Step>
+
+  <Step title="Set Duration">
+    Choose how long the order stays active:
+    - Hours: `1H`, `6H`, `12H`, `24H`
+    - Days: `1D`, `2D`, `3D`, `5D`
+
+    Maximum duration is 5 days (120 hours).
+  </Step>
+
+  <Step title="Confirm">
+    Review all settings and confirm. Your limit order is now active.
+
+    [SCREENSHOT: Limit order confirmation with all parameters]
+  </Step>
+</Steps>
+
+## Managing Limit Orders
+
+### View Active Orders
+
+Tap **📊 Positions** from the main menu to see all your active limit orders.
+
+Each order shows:
+- Token name and target
+- Current price vs trigger price
+- Time remaining
+- Order status
+
+[SCREENSHOT: Limit orders console]
+
+### Cancel an Order
+
+<Steps>
+  <Step title="Open Positions">
+    Tap **📊 Positions** → **Limit Orders**.
+  </Step>
+
+  <Step title="Select Order">
+    Find the order you want to cancel.
+  </Step>
+
+  <Step title="Cancel">
+    Tap **🗑️ Delete** or **Cancel Order**.
+  </Step>
+</Steps>
+
+### Modify an Order
+
+Currently, to modify a limit order:
+1. Cancel the existing order
+2. Create a new order with updated parameters
+
+## Limit Order Strategies
+
+<AccordionGroup>
+  <Accordion title="Buy the Dip" icon="chart-line-down">
+    Set a buy order at a lower price than current:
+
+    ```
+    /limit 0xabc...def 10 %:-20
+    ```
+
+    Buys when the token drops 20% from current price.
+  </Accordion>
+
+  <Accordion title="Take Profit Ladder" icon="stairs">
+    Set multiple sell orders at different price targets:
+
+    - Sell 25% at +50%
+    - Sell 25% at +100%
+    - Sell 25% at +200%
+    - Keep 25% for moon
+
+    Create each as a separate limit order.
+  </Accordion>
+
+  <Accordion title="Stop Loss Protection" icon="shield-halved">
+    Protect against major losses:
+
+    ```
+    /limit 0xabc...def 100% %:-30
+    ```
+
+    Sells everything if price drops 30%.
+  </Accordion>
+
+  <Accordion title="Market Cap Milestone" icon="bullseye">
+    Trade based on market cap:
+
+    ```
+    /limit 0xabc...def 50% mc:10m
+    ```
+
+    Sells 50% when market cap reaches $10 million.
+  </Accordion>
+</AccordionGroup>
+
+## Take Profit & Stop Loss
+
+When creating a limit buy order, you can set automatic exits:
+
+### Take Profit
+Automatically sells when your profit target is reached:
+- Set as percentage gain from entry
+- Choose how much to sell (25%, 50%, 100%)
+- Multiple take profit levels possible
+
+### Stop Loss
+Automatically sells to limit losses:
+- Set as percentage loss from entry
+- Usually set to sell entire position
+- Protects against major downturns
+
+**Example Combined Order:**
+- Buy when price hits $0.001
+- Take profit: Sell 50% at +100% gain
+- Stop loss: Sell 100% at -30% loss
+
+## Order Expiration
+
+Limit orders expire after their set duration. If not triggered:
+- Order is automatically cancelled
+- No tokens are spent
+- You receive no notification (check Positions to verify)
+
+<Tip>
+For important levels, set longer durations (3-5 days). For quick trades, 24 hours is usually sufficient.
+</Tip>
+
+## Important Notes
+
+<Warning>
+Limit orders are not guaranteed to execute at your exact price. Slippage may occur, especially for:
+- Low liquidity tokens
+- Fast-moving markets
+- Large order sizes
+</Warning>
+
+- Orders execute at the next available price once triggered
+- Gas fees apply when the order executes
+- Orders require you to have sufficient balance when triggered
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="DCA Orders" icon="clock" href="/trading/dca-orders">
+    Automate recurring trades
+  </Card>
+  <Card title="Slippage Settings" icon="sliders" href="/trading/slippage-settings">
+    Fine-tune execution
+  </Card>
+</CardGroup>

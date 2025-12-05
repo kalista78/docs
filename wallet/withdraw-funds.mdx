@@ -1,0 +1,224 @@
+---
+title: "Withdraw Funds"
+sidebarTitle: "Withdraw Funds"
+description: "Send native tokens or ERC-20 tokens from your AceBot wallet to any address."
+icon: "money-bill-transfer"
+---
+
+# Withdraw Funds
+
+Move tokens out of your AceBot wallet to external addresses, exchanges, or other wallets.
+
+## Withdraw Native Tokens
+
+Send the chain's native token (S, MON, ETH, HYPE, XPL):
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Select Wallet">
+    Tap on the wallet you want to withdraw from.
+  </Step>
+
+  <Step title="Tap Withdraw Funds">
+    Select **💰 Withdraw Funds**.
+
+    [SCREENSHOT: Wallet options showing Withdraw Funds]
+  </Step>
+
+  <Step title="Enter Destination Address">
+    Paste the wallet address you want to send to.
+
+    <Warning>
+    Double-check the address. Transactions cannot be reversed.
+    </Warning>
+  </Step>
+
+  <Step title="Select Amount">
+    Choose how much to send:
+
+    **Presets:**
+    - 25% of balance
+    - 50% of balance
+    - 100% (MAX)
+
+    Or enter a custom amount.
+
+    [SCREENSHOT: Amount selection with presets]
+  </Step>
+
+  <Step title="Confirm Transaction">
+    Review the details:
+    - Amount being sent
+    - Destination address
+    - Estimated gas fee
+
+    Tap **Confirm** to send.
+
+    [SCREENSHOT: Withdrawal confirmation]
+  </Step>
+
+  <Step title="Transaction Complete">
+    You'll receive a transaction hash with a link to view on the block explorer.
+  </Step>
+</Steps>
+
+## Withdraw ERC-20 Tokens
+
+Send any ERC-20 token from your wallet:
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Select Wallet">
+    Tap on the wallet containing the tokens.
+  </Step>
+
+  <Step title="Tap Withdraw Tokens">
+    Select **🪙 Withdraw Tokens**.
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the contract address of the token you want to send.
+
+    Your balance of this token is fetched and displayed.
+  </Step>
+
+  <Step title="Enter Destination Address">
+    Paste the address you want to send to.
+  </Step>
+
+  <Step title="Select Amount">
+    Choose percentage or enter specific token amount.
+  </Step>
+
+  <Step title="Confirm">
+    Review and confirm the transaction.
+  </Step>
+</Steps>
+
+## Withdrawal Fees
+
+When you withdraw:
+
+| Fee Type | Description |
+|----------|-------------|
+| **Gas Fee** | Network fee for the transaction (varies by chain congestion) |
+| **Platform Fee** | None for standard withdrawals |
+
+The gas fee is shown on the confirmation screen before you approve.
+
+<Info>
+A small gas buffer (10 BPS) is automatically reserved when using MAX to ensure the transaction can complete.
+</Info>
+
+## Withdraw to Exchange
+
+When withdrawing to a centralized exchange:
+
+<Steps>
+  <Step title="Get Deposit Address">
+    Go to your exchange account and find the deposit address for the specific chain.
+  </Step>
+
+  <Step title="Verify Network">
+    Make sure you're copying the address for the correct network:
+    - Sonic address for Sonic withdrawals
+    - Monad address for Monad withdrawals
+    - etc.
+
+    <Warning>
+    Sending to the wrong network can result in permanent loss of funds.
+    </Warning>
+  </Step>
+
+  <Step title="Check Memo Requirements">
+    Some exchanges require a memo or tag. If needed, contact support for guidance.
+  </Step>
+
+  <Step title="Start with Small Amount">
+    For first-time withdrawals to a new address, test with a small amount.
+  </Step>
+
+  <Step title="Complete Withdrawal">
+    Follow the standard withdrawal process.
+  </Step>
+</Steps>
+
+## Withdraw All
+
+To completely empty a wallet:
+
+1. First, check if you have any ERC-20 tokens
+2. Withdraw ERC-20 tokens first (they need native tokens for gas)
+3. Finally, withdraw native tokens using the MAX preset
+
+The MAX preset automatically calculates the maximum you can send after reserving gas for the transaction itself.
+
+## Transaction Status
+
+After confirming:
+
+| Status | Meaning |
+|--------|---------|
+| **Pending** | Transaction submitted, waiting for confirmation |
+| **Confirmed** | Transaction included in a block |
+| **Failed** | Transaction reverted (funds returned) |
+
+Click the explorer link to check real-time status.
+
+## Troubleshooting Withdrawals
+
+<AccordionGroup>
+  <Accordion title="Transaction is pending too long" icon="clock">
+    Network congestion can delay confirmation. Check the explorer for status. In most cases, just wait.
+  </Accordion>
+
+  <Accordion title="Transaction failed" icon="xmark">
+    Common causes:
+    - Insufficient balance for gas
+    - Invalid destination address
+    - Network issues
+
+    Your funds remain in your wallet if the transaction fails.
+  </Accordion>
+
+  <Accordion title="Sent to wrong address" icon="triangle-exclamation">
+    Blockchain transactions are irreversible. If you sent to the wrong address:
+    - If it's your address on another wallet, you can recover
+    - If it's someone else's address, contact them directly
+    - If it's an invalid address, funds may be lost
+  </Accordion>
+
+  <Accordion title="Tokens not showing in destination" icon="eye-slash">
+    - Wait for full confirmation (check block explorer)
+    - Add the token contract to your receiving wallet
+    - Some wallets don't auto-detect all tokens
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<Tip>
+**Always double-check addresses.** Copy-paste instead of typing, and verify the first and last few characters.
+</Tip>
+
+1. **Test first** — Small test transaction before large amounts
+2. **Correct network** — Verify you're on the right chain
+3. **Save gas** — Keep some native tokens for future transactions
+4. **Record keeping** — Save transaction hashes for your records
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Transaction History" icon="clock-rotate-left" href="/wallet/transaction-history">
+    View past transactions
+  </Card>
+  <Card title="Manage Wallets" icon="folder-open" href="/wallet/manage-wallets">
+    Organize your wallets
+  </Card>
+</CardGroup>

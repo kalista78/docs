@@ -1,0 +1,206 @@
+---
+title: "Transaction History"
+sidebarTitle: "Transaction History"
+description: "View your past trades, withdrawals, and wallet activity."
+icon: "clock-rotate-left"
+---
+
+# Transaction History
+
+Track all your wallet activity including trades, withdrawals, bridges, and more.
+
+## Viewing Transaction History
+
+### Through Block Explorers
+
+Every transaction in AceBot provides an explorer link. Click these links to view full details:
+
+| Chain | Explorer |
+|-------|----------|
+| 🔵 Sonic | [sonicscan.org](https://sonicscan.org) |
+| 🟣 Monad | [monadvision.com](https://monadvision.com) |
+| 🖤 Ink | [explorer.inkonchain.com](https://explorer.inkonchain.com) |
+| ⚡ HyperEVM | [hyperevmscan.io](https://hyperevmscan.io) |
+| 🔴 Plasma | [plasmascan.to](https://plasmascan.to) |
+
+### Viewing by Wallet Address
+
+To see all transactions for a wallet:
+
+<Steps>
+  <Step title="Copy Wallet Address">
+    Open **👛 Wallets** and tap your wallet to copy the address.
+  </Step>
+
+  <Step title="Open Explorer">
+    Go to the block explorer for your chain.
+  </Step>
+
+  <Step title="Search Address">
+    Paste your wallet address in the search bar.
+  </Step>
+
+  <Step title="View History">
+    All transactions to and from that address are displayed.
+  </Step>
+</Steps>
+
+## Transaction Types
+
+Your history may include:
+
+| Type | Description |
+|------|-------------|
+| **Buy/Sell** | Token swaps through DEXs |
+| **Transfer Out** | Withdrawals to external addresses |
+| **Transfer In** | Deposits from external sources |
+| **Bridge** | Cross-chain transfers |
+| **Wrap/Unwrap** | Token conversions |
+| **Claim** | Rakeback or referral reward claims |
+
+## Understanding Transaction Details
+
+When viewing a transaction on an explorer:
+
+### Transaction Hash
+Unique identifier for the transaction. Example:
+```
+0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+```
+
+### Status
+- **Success** — Transaction completed
+- **Pending** — Waiting for confirmation
+- **Failed** — Transaction reverted
+
+### Block
+The block number where the transaction was included.
+
+### From / To
+- **From** — Your wallet address (for outgoing)
+- **To** — The contract or address interacted with
+
+### Value
+Amount of native tokens transferred (if any).
+
+### Gas Used
+Amount of gas consumed by the transaction.
+
+### Transaction Fee
+Total gas cost (Gas Used × Gas Price).
+
+## Reading Swap Transactions
+
+For buy/sell transactions, look for:
+
+### Input
+What you sent (e.g., "10 S" or "1000 TOKEN").
+
+### Output
+What you received (shown in internal transactions or token transfers).
+
+### Token Transfers
+Section showing all token movements in the transaction.
+
+## Tracking Position Performance
+
+To track your trading performance:
+
+<Steps>
+  <Step title="Note Entry Price">
+    When buying, record:
+    - Token address
+    - Amount bought
+    - Price at purchase
+    - Transaction hash
+  </Step>
+
+  <Step title="Track Current Price">
+    Use **💰 Balances** to see current holdings and value.
+  </Step>
+
+  <Step title="Calculate P&L">
+    Compare current value to entry value:
+    - P&L = Current Value - Entry Value
+    - % Gain = (Current - Entry) / Entry × 100
+  </Step>
+</Steps>
+
+## Transaction Receipts
+
+Each transaction in AceBot provides:
+- Transaction hash
+- Explorer link
+- Basic confirmation status
+
+Save these for your records or tax documentation.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Transaction not showing" icon="eye-slash">
+    - Wait a few minutes for indexing
+    - Refresh the explorer page
+    - Verify you're on the correct chain's explorer
+    - Check that the transaction actually confirmed
+  </Accordion>
+
+  <Accordion title="Shows wrong token amounts" icon="question">
+    - Some explorers have delayed token detection
+    - Try a different explorer for the same chain
+    - Check the token transfers tab specifically
+  </Accordion>
+
+  <Accordion title="Can't find old transactions" icon="magnifying-glass">
+    - Use the explorer's advanced search
+    - Filter by date range if available
+    - Search by the specific transaction hash if you have it
+  </Accordion>
+</AccordionGroup>
+
+## Exporting History
+
+For tax reporting or record keeping:
+
+<Steps>
+  <Step title="Visit Explorer">
+    Go to your chain's block explorer.
+  </Step>
+
+  <Step title="Search Your Address">
+    Enter your wallet address.
+  </Step>
+
+  <Step title="Export">
+    Most explorers offer CSV export options:
+    - Look for "Download CSV" or "Export"
+    - Select date range if needed
+    - Download transactions list
+  </Step>
+</Steps>
+
+<Info>
+For multi-chain activity, you'll need to export from each chain's explorer separately.
+</Info>
+
+## Positions Console
+
+AceBot also shows active positions:
+
+- Open **📊 Positions** from main menu
+- View active limit orders
+- View active DCA strategies
+- See pending liquidity snipes
+
+This shows current activity rather than historical transactions.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage Wallets" icon="folder-open" href="/wallet/manage-wallets">
+    Organize your wallets
+  </Card>
+  <Card title="Start Trading" icon="chart-line" href="/trading/buy-tokens">
+    Make new transactions
+  </Card>
+</CardGroup>

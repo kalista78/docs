@@ -1,0 +1,233 @@
+---
+title: "Manage Wallets"
+sidebarTitle: "Manage Wallets"
+description: "Create, import, and organize multiple trading wallets in AceBot."
+icon: "folder-open"
+---
+
+# Manage Wallets
+
+AceBot supports unlimited wallets per user. Create separate wallets for different strategies, chains, or trading styles.
+
+## Access Wallet Manager
+
+Tap **👛 Wallets** from the main menu or use the `/wallet` command.
+
+[SCREENSHOT: Main menu with Wallets button]
+
+## Wallet Manager Overview
+
+The wallet manager shows:
+- All your wallets (8 per page, with pagination)
+- Balance for each wallet on the current chain
+- Default wallet indicator (✅)
+- Chain selector buttons at the top
+
+[SCREENSHOT: Wallet manager with multiple wallets]
+
+## Create a New Wallet
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Tap Create Wallet">
+    Select the **Create Wallet** button.
+  </Step>
+
+  <Step title="Name Your Wallet">
+    Enter a descriptive name (e.g., "Trading Main", "Monad Degen", "Long Term Holds").
+  </Step>
+
+  <Step title="Wallet Created">
+    Your new wallet is instantly created with a unique address and added to your list.
+  </Step>
+</Steps>
+
+<Info>
+New wallets are encrypted with AES-256-GCM. Private keys are never shown in Telegram chat.
+</Info>
+
+## Import an Existing Wallet
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets** from the main menu.
+  </Step>
+
+  <Step title="Tap Import Wallet">
+    Select the **Import Wallet** button.
+  </Step>
+
+  <Step title="Enter Private Key">
+    Paste your private key (64-character hex string, with or without 0x prefix).
+
+    <Warning>
+    Your message is **automatically deleted** after the key is processed for security.
+    </Warning>
+  </Step>
+
+  <Step title="Name and Confirm">
+    Enter a name for the wallet. It's now imported and ready to use.
+  </Step>
+</Steps>
+
+## Wallet Actions
+
+Tap on any wallet to access these options:
+
+### View Details
+- Wallet address (tap to copy)
+- Current balance by chain
+- Default wallet status
+
+### Rename Wallet
+Change the wallet's display name:
+1. Tap the wallet
+2. Select **Rename**
+3. Enter new name
+
+### Set as Default
+Make this wallet your default for all transactions:
+1. Tap the wallet
+2. Select **Set as Default**
+3. A checkmark appears next to it
+
+### Withdraw Funds
+Send tokens to another address:
+1. Tap the wallet
+2. Select **💰 Withdraw Funds** (native) or **🪙 Withdraw Tokens** (ERC-20)
+3. Follow the withdrawal flow
+
+### Delete Wallet
+Remove a wallet from AceBot:
+1. Tap the wallet
+2. Select **Delete**
+3. If the wallet has funds, you'll be warned to withdraw first
+4. Confirm deletion
+
+<Warning>
+Deleted wallets cannot be recovered unless you have the private key backed up elsewhere.
+</Warning>
+
+## Switch View by Chain
+
+At the top of the wallet manager, tap chain emojis to filter balances:
+
+```
+🔵 | 🟣 | 🖤 | ⚡ | 🔴
+```
+
+- Tap a chain to view balances on that network
+- Active chain shows a checkmark
+- Balance updates to show holdings on that chain
+
+## Pagination
+
+With many wallets, use pagination:
+- **⬅️ Prev** — Previous page
+- **➡️ Next** — Next page
+- 8 wallets displayed per page
+
+## Fund Distribution
+
+Split funds from one wallet to multiple wallets:
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets**.
+  </Step>
+
+  <Step title="Select Fund Distribution">
+    Tap **Fund Distribution** (if available).
+  </Step>
+
+  <Step title="Choose Source">
+    Select the wallet to distribute from.
+  </Step>
+
+  <Step title="Select Targets">
+    Choose destination wallets.
+  </Step>
+
+  <Step title="Set Amounts">
+    Configure how much each wallet receives.
+  </Step>
+
+  <Step title="Confirm">
+    Review and execute the distribution.
+  </Step>
+</Steps>
+
+## Fund Consolidation
+
+Gather funds from multiple wallets into one:
+
+<Steps>
+  <Step title="Open Wallet Manager">
+    Tap **👛 Wallets**.
+  </Step>
+
+  <Step title="Select Fund Consolidation">
+    Tap **Fund Consolidation** (if available).
+  </Step>
+
+  <Step title="Choose Sources">
+    Select wallets to consolidate from.
+  </Step>
+
+  <Step title="Select Destination">
+    Choose the wallet to receive funds.
+  </Step>
+
+  <Step title="Confirm">
+    Review and execute the consolidation.
+  </Step>
+</Steps>
+
+<Info>
+Fund operations may incur a small platform fee (0.1% by default) plus gas costs.
+</Info>
+
+## Wallet Organization Tips
+
+<AccordionGroup>
+  <Accordion title="Separate by strategy" icon="chess">
+    - "Degen Plays" — High-risk, quick trades
+    - "Blue Chips" — Long-term holds
+    - "DCA Bot" — Automated accumulation
+  </Accordion>
+
+  <Accordion title="Separate by chain" icon="link">
+    - "Sonic Main"
+    - "Monad Trading"
+    - "HyperEVM DeFi"
+
+    Helps track performance per network.
+  </Accordion>
+
+  <Accordion title="Separate by risk" icon="shield">
+    - Keep smaller amounts in active trading wallets
+    - Keep larger amounts in less active storage wallets
+    - Reduces exposure if one strategy goes wrong
+  </Accordion>
+</AccordionGroup>
+
+## Wallet Security
+
+- **Encrypted storage** — All private keys are encrypted with AES-256-GCM
+- **No key display** — Keys are never shown in Telegram chat
+- **Secure export** — Access keys only through the secure portal
+- **Auto-delete** — Import messages are automatically deleted
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Export Keys" icon="key" href="/wallet/export-keys">
+    Back up your wallet
+  </Card>
+  <Card title="Withdraw Funds" icon="money-bill-transfer" href="/wallet/withdraw-funds">
+    Send tokens out
+  </Card>
+</CardGroup>

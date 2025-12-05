@@ -1,0 +1,249 @@
+---
+title: "DCA Orders"
+sidebarTitle: "DCA Orders"
+description: "Dollar Cost Averaging lets you automatically buy or sell at regular intervals to reduce timing risk."
+icon: "clock"
+---
+
+# DCA Orders (Dollar Cost Averaging)
+
+DCA is a strategy where you buy or sell fixed amounts at regular intervals, regardless of price. This reduces the impact of volatility and removes the stress of timing the market.
+
+## Why Use DCA?
+
+- **Reduces timing risk** — You don't need to pick the perfect entry
+- **Smooths volatility** — Your average price evens out over time
+- **Removes emotion** — Automated execution prevents panic decisions
+- **Builds discipline** — Consistent investment regardless of market conditions
+
+## Quick DCA Commands
+
+```
+/dcabuy 0x1234...5678    # Start DCA buy wizard
+/dcasell 0x1234...5678   # Start DCA sell wizard
+```
+
+## Create a DCA Order
+
+<Steps>
+  <Step title="Open DCA Setup">
+    From the main menu, start a trade and select **DCA** as the order type.
+
+    Or use `/dcabuy` or `/dcasell` with a token address.
+
+    [SCREENSHOT: Order type selection showing DCA option]
+  </Step>
+
+  <Step title="Select Direction">
+    Choose whether to DCA **Buy** or DCA **Sell**.
+
+    - **DCA Buy**: Gradually accumulate a position
+    - **DCA Sell**: Gradually exit a position
+  </Step>
+
+  <Step title="Enter Token Address">
+    Paste the contract address of the token you want to DCA.
+  </Step>
+
+  <Step title="Select Wallet">
+    Choose which wallet to use for the DCA orders.
+  </Step>
+
+  <Step title="Configure Amount">
+    <Tabs>
+      <Tab title="DCA Buy">
+        Enter the amount of native tokens to spend **per transaction**.
+
+        **Presets:** 1, 2, 5, 10, 25, 50
+
+        Example: 5 tokens per buy = 5 native tokens spent each interval.
+      </Tab>
+
+      <Tab title="DCA Sell">
+        Enter the percentage of your position to sell **per transaction**.
+
+        **Presets:** 25%, 50%, 75%, 100%
+
+        Example: 10% per sell over 10 transactions = gradual full exit.
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Set Duration">
+    Enter the total time window for your DCA strategy.
+
+    **Default:** 60 minutes (configurable in Settings)
+
+    Example: 120 minutes = DCA runs for 2 hours total.
+  </Step>
+
+  <Step title="Set Interval">
+    Enter how often transactions should execute.
+
+    **Default:** 5 minutes (configurable in Settings)
+
+    Example: Every 5 minutes = one transaction every 5 minutes.
+
+    <Info>
+    **Total transactions** = Duration ÷ Interval
+
+    120 min ÷ 5 min = 24 transactions
+    </Info>
+  </Step>
+
+  <Step title="Review and Confirm">
+    Review your DCA setup:
+    - Total transactions
+    - Amount per transaction
+    - Total amount (buy) or total percentage (sell)
+    - Duration and interval
+
+    Tap **Confirm** to start.
+
+    [SCREENSHOT: DCA order confirmation screen]
+  </Step>
+</Steps>
+
+## How DCA Executes
+
+Once confirmed:
+
+1. **First transaction** executes immediately
+2. **Subsequent transactions** execute at each interval
+3. Each transaction is independent — some may succeed even if others fail
+4. DCA continues until all transactions complete or you cancel
+
+### Execution Example
+
+**DCA Buy Setup:**
+- Amount: 5 native tokens per transaction
+- Duration: 60 minutes
+- Interval: 10 minutes
+
+**Result:**
+- 6 transactions total (60 ÷ 10 = 6)
+- Executes at: 0, 10, 20, 30, 40, 50 minutes
+- Total spent: 30 native tokens (6 × 5)
+
+## Managing DCA Orders
+
+### View Active DCA
+
+Tap **📊 Positions** → **DCA Orders** to see your active DCA strategies.
+
+Each order shows:
+- Token being accumulated/sold
+- Progress (X of Y transactions completed)
+- Next scheduled transaction
+- Average execution price
+
+[SCREENSHOT: DCA orders console showing progress]
+
+### Pause a DCA
+
+Temporarily stop a DCA without cancelling:
+
+1. Open **📊 Positions** → **DCA Orders**
+2. Select your DCA order
+3. Tap **⏸️ Pause**
+
+Resume anytime with the **▶️ Resume** button.
+
+### Cancel a DCA
+
+Stop all remaining transactions:
+
+1. Open **📊 Positions** → **DCA Orders**
+2. Select your DCA order
+3. Tap **🗑️ Stop**
+
+Completed transactions are not reversed — you keep tokens already bought or sold.
+
+## DCA Strategies
+
+<AccordionGroup>
+  <Accordion title="Accumulation DCA" icon="piggy-bank">
+    Gradually build a position in a token you believe in:
+
+    - **Duration:** Days to weeks (set up multiple DCAs)
+    - **Interval:** Daily or every few hours
+    - **Amount:** Fixed amount you're comfortable with
+
+    Best for: Long-term positions, reducing entry risk
+  </Accordion>
+
+  <Accordion title="Exit DCA" icon="door-open">
+    Gradually exit a profitable position:
+
+    - **Duration:** Hours to days
+    - **Interval:** Based on expected volatility
+    - **Amount:** 5-10% per transaction for gradual exit
+
+    Best for: Taking profits without market impact
+  </Accordion>
+
+  <Accordion title="Dip Buying" icon="chart-line-down">
+    DCA into positions during market dips:
+
+    - **Duration:** Match expected dip duration
+    - **Interval:** Short (5-15 minutes) to catch multiple levels
+    - **Amount:** Scale based on conviction
+
+    Best for: Volatile markets, catching falling knives safely
+  </Accordion>
+
+  <Accordion title="Fixed Schedule" icon="calendar">
+    Regular purchases regardless of market conditions:
+
+    - **Duration:** Ongoing (set up new DCAs periodically)
+    - **Interval:** Daily or weekly
+    - **Amount:** Fixed budget per period
+
+    Best for: Passive accumulation, removing emotion
+  </Accordion>
+</AccordionGroup>
+
+## Setting DCA Defaults
+
+Configure your preferred DCA settings:
+
+1. Tap **⚙️ Settings**
+2. Select **DCA Settings**
+3. Set:
+   - **Default Interval:** Minutes between transactions
+   - **Default Duration:** Total DCA window
+   - **Default Slippage:** Slippage for DCA transactions
+
+## DCA vs Limit Orders
+
+| Feature | DCA | Limit Orders |
+|---------|-----|--------------|
+| **Trigger** | Time-based | Price-based |
+| **Execution** | Multiple transactions | Single transaction |
+| **Best for** | Reducing timing risk | Targeting specific prices |
+| **Requires** | Patience | Price prediction |
+
+<Tip>
+Combine DCA with limit orders: Use DCA to accumulate, then set limit orders for profit-taking.
+</Tip>
+
+## Important Considerations
+
+<Warning>
+Each DCA transaction incurs gas fees. For very small amounts, gas may eat into your trades. Consider larger amounts with fewer transactions if gas costs are high.
+</Warning>
+
+- DCA doesn't guarantee profits — it averages your entry/exit
+- Transactions may fail due to slippage or low balance
+- Keep enough native tokens for gas throughout the DCA period
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Limit Orders" icon="crosshairs" href="/trading/limit-orders">
+    Set price-triggered trades
+  </Card>
+  <Card title="Slippage Settings" icon="sliders" href="/trading/slippage-settings">
+    Optimize DCA execution
+  </Card>
+</CardGroup>

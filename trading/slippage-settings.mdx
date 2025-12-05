@@ -1,0 +1,220 @@
+---
+title: "Slippage Settings"
+sidebarTitle: "Slippage Settings"
+description: "Configure slippage tolerance to balance trade execution speed with price protection."
+icon: "sliders"
+---
+
+# Slippage Settings
+
+Slippage is the difference between the price you expect and the price you actually get. Understanding and configuring slippage correctly can save you money and prevent failed trades.
+
+## What is Slippage?
+
+When you submit a trade, the market can move before your transaction confirms. Slippage tolerance sets how much price movement you'll accept:
+
+- **1% slippage** — Trade executes if price moves up to 1%
+- **10% slippage** — Trade executes if price moves up to 10%
+- **50% slippage** — Trade executes even with significant price movement
+
+If the price moves beyond your slippage tolerance, the trade fails and you keep your tokens.
+
+## When Slippage Matters
+
+| Scenario | Slippage Risk | Recommended Setting |
+|----------|---------------|---------------------|
+| High liquidity token | Low | 0.5% - 3% |
+| Medium liquidity | Medium | 3% - 10% |
+| Low liquidity token | High | 10% - 30% |
+| New token launch | Very High | 30% - 50% |
+| Large trade size | Higher | Increase by 5-10% |
+
+## Configure Default Slippage
+
+AceBot lets you set different default slippage for each order type.
+
+<Steps>
+  <Step title="Open Settings">
+    Tap **⚙️ Settings** from the main menu.
+  </Step>
+
+  <Step title="Select Slippage">
+    Tap **Slippage** or **📊 Slippage** to open slippage settings.
+  </Step>
+
+  <Step title="Choose Order Type">
+    Select which type of order to configure:
+    - **Direct Order** — Instant buy/sell
+    - **Limit Order** — Price-triggered orders
+    - **DCA** — Dollar cost averaging
+    - **Sniper** — Liquidity sniping
+
+    [SCREENSHOT: Slippage settings showing order types]
+  </Step>
+
+  <Step title="Enter Slippage Value">
+    Enter your preferred slippage percentage (0.1% - 100%).
+
+    **Recommended defaults:**
+    - Direct Order: 5-15%
+    - Limit Order: 10-20%
+    - DCA: 5-15%
+    - Sniper: 30-50%
+  </Step>
+</Steps>
+
+## Adjust Slippage Per Trade
+
+You can override your default slippage on any individual trade:
+
+<Steps>
+  <Step title="Start a Trade">
+    Begin a buy or sell as normal.
+  </Step>
+
+  <Step title="Reach Confirmation">
+    On the confirmation screen, locate the slippage setting.
+  </Step>
+
+  <Step title="Tap to Adjust">
+    Tap the slippage value (e.g., "⚙️ Slippage: 5%").
+  </Step>
+
+  <Step title="Enter New Value">
+    Enter your desired slippage for this specific trade.
+  </Step>
+
+  <Step title="Confirm">
+    Proceed with the trade using your adjusted slippage.
+  </Step>
+</Steps>
+
+## Slippage Guidelines by Token Type
+
+<Tabs>
+  <Tab title="Blue Chips">
+    **Tokens:** Well-established tokens with high liquidity
+
+    **Slippage:** 0.5% - 3%
+
+    These tokens have deep liquidity and stable prices. Low slippage protects you from MEV attacks and unfavorable fills.
+  </Tab>
+
+  <Tab title="Mid-Cap">
+    **Tokens:** Moderate liquidity, some volatility
+
+    **Slippage:** 3% - 10%
+
+    Balance between execution certainty and price protection.
+  </Tab>
+
+  <Tab title="Memecoins">
+    **Tokens:** High volatility, variable liquidity
+
+    **Slippage:** 10% - 30%
+
+    Fast price movements require higher slippage for execution.
+  </Tab>
+
+  <Tab title="New Launches">
+    **Tokens:** Just launched, low liquidity
+
+    **Slippage:** 30% - 50%
+
+    Extreme volatility at launch. High slippage needed but increases risk of bad fills.
+  </Tab>
+</Tabs>
+
+## Common Slippage Issues
+
+<AccordionGroup>
+  <Accordion title="Trade keeps failing" icon="xmark">
+    **Cause:** Slippage too low for the token's volatility.
+
+    **Solution:** Increase slippage by 5-10% and retry. For very volatile tokens, try 20-30%.
+  </Accordion>
+
+  <Accordion title="Got less than expected" icon="money-bill-transfer">
+    **Cause:** Price moved within your slippage tolerance.
+
+    **Solution:** This is normal market behavior. For tighter control, reduce slippage (but trades may fail more often).
+  </Accordion>
+
+  <Accordion title="Sandwich attack" icon="bread-slice">
+    **Cause:** MEV bots exploit high slippage to extract value.
+
+    **Solution:** Lower slippage on high-liquidity tokens. Consider trading smaller amounts.
+  </Accordion>
+
+  <Accordion title="Large trade has high impact" icon="chart-bar">
+    **Cause:** Your trade size moves the market.
+
+    **Solution:** Split into multiple smaller trades, or use DCA to spread execution over time.
+  </Accordion>
+</AccordionGroup>
+
+## Understanding Price Impact
+
+Price impact is different from slippage:
+
+- **Slippage:** Price moves while your transaction is pending
+- **Price Impact:** Your trade size moves the price
+
+For large trades, check the estimated price impact on the confirmation screen. If it's high:
+- Consider trading smaller amounts
+- Use DCA to spread the trade
+- Wait for more liquidity
+
+## Slippage by Order Type
+
+### Direct Orders
+- Execute immediately at market price
+- Lower slippage = more price protection
+- Higher slippage = higher chance of execution
+
+### Limit Orders
+- Execute when trigger conditions are met
+- Slippage applies to execution price
+- Set higher since market may move fast at triggers
+
+### DCA Orders
+- Multiple transactions over time
+- Each transaction uses your slippage setting
+- Consider consistent slippage across all DCA trades
+
+### Sniper Orders
+- Execute instantly at liquidity add
+- Need highest slippage (30-50%+)
+- Speed matters more than precision
+
+## Best Practices
+
+<Tip>
+**Start low, increase as needed.** Begin with lower slippage and increase only if trades fail repeatedly.
+</Tip>
+
+1. **Know your token** — Check liquidity depth before trading
+2. **Adjust by size** — Larger trades need higher slippage
+3. **Check impact** — Review price impact on confirmation screen
+4. **Split large trades** — Use DCA or multiple transactions
+5. **Watch for warnings** — AceBot warns about high slippage risk
+
+## Slippage Settings Summary
+
+| Order Type | Default | Range | Recommended |
+|------------|---------|-------|-------------|
+| Direct Order | 50% | 0.1-100% | 5-15% |
+| Limit Order | 50% | 0.1-100% | 10-20% |
+| DCA | 50% | 0.1-100% | 5-15% |
+| Sniper | 50% | 0.1-100% | 30-50% |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Buy Tokens" icon="cart-shopping" href="/trading/buy-tokens">
+    Apply your slippage settings
+  </Card>
+  <Card title="DCA Orders" icon="clock" href="/trading/dca-orders">
+    Spread trades to reduce impact
+  </Card>
+</CardGroup>
